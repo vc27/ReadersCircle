@@ -1,0 +1,68 @@
+/* 
+File Name: reset.css
+Version: 3.0
+Updated: 03.14.14
+Package: ParentTheme
+License: GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+#################################################################################################### */
+html { width:100% !important; }
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
+body{font-size:62.5%;}
+article,aside,details,figcaption,figure,footer,header,hgroup,nav,section{display:block;}
+audio,canvas,video{display:inline-block;*display:inline;*zoom:1;}
+audio:not([controls]){display:none;}
+[hidden]{display:none;}
+img{-ms-interpolation-mode:bicubic;width:inherit;}
+img#wpstats{width:0px;height:0px;padding:0px;border:none;overflow:hidden}
+body{line-height:1;text-align:center;min-height:100%;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}
+ol,ul{list-style:none;}
+blockquote,q{quotes:none;}
+blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}
+table{border-collapse:collapse;border-spacing:0;}
+td,th{vertical-align:top;}
+strong{font-weight:bold;}
+em{font-style:italic;}
+ul.sortable li{cursor:move;}
+input[type="submit"],
+input[type="button"],
+button,
+.trigger{cursor:pointer;}
+.hide,.triggered{display:none;}
+.aligncenter{float:none;margin:0 auto;}
+.alignright{float:right;}
+.alignleft{float:left;}
+.clear{display:block;clear:both;float:none;}
+.no_border{border:none !important;}
+.none,.ui-tabs .ui-tabs-hide,.ui-tabs-hide{display:none;}
+br{height:0;}
+a img{border:none;}
+legend{display:none;}
+svg:not(:root){overflow:hidden;}
+/* clearfix */
+.clearfix:before, .clearfix:after {content: "\0020"; display: block; height: 0; visibility: hidden;}
+.clearfix:after {clear: both;}
+.clearfix {zoom: 1;}
+/*** superfish ***/
+.sf-menu,.sf-menu *{margin:0;padding:0;list-style:none;}
+.sf-menu{line-height:1.0;}
+.sf-menu ul{position:absolute;top:-999em;width:10em;}
+.sf-menu ul li{width:100%;}
+.sf-menu li:hover{visibility:inherit;}
+.sf-menu li{float:left;position:relative;}
+.sf-menu a{display:block;position:relative;}
+.sf-menu li:hover ul,
+.sf-menu li.sfHover ul{left:0;top:1.8em;z-index:99;}
+ul.sf-menu li:hover li ul,
+ul.sf-menu li.sfHover li ul{top:-999em;}
+ul.sf-menu li li:hover ul,
+ul.sf-menu li li.sfHover ul{left:10em; top:0;}
+ul.sf-menu li li:hover li ul,
+ul.sf-menu li li.sfHover li ul{top:-999em;}
+ul.sf-menu li li li:hover ul,
+ul.sf-menu li li li.sfHover ul{left:10em; top:0;}
+.hentry { position:relative; }
+.typekit-badge {display:none!important;}
+* :focus{outline:0;}
+.fade{opacity:0;-webkit-transition: opacity 0.15s linear;transition: opacity 0.15s linear;}
+.fade.in{display:block;opacity:1;}
+.fade.out{display:none;}

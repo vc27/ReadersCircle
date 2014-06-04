@@ -1,0 +1,17 @@
+== 1.3 ==
+10.16.13
+- move globalization of '_template_page_options' out of options page and into the static functions that actually get the options
+
+== 1.2 ==
+10.02.13
+- add sajax_uri for cform
+- add favicon support via wp_head
+
+== 1.1 ==
+08.13.13
+- update ThemeSupport::template_page_options() -> html_entity_decode
+
+== 1.0 ==
+07.23.13
+- initial Commit
+- grouping of template page options and theme support for quick deployment.

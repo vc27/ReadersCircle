@@ -1,0 +1,7 @@
+/**
+ * File Name localStorage.js
+ * @license GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+ * @version 1.0
+ * @updated 00.00.00
+ **/
+var _localStorage={errors:[],haveKeyValue:null,_haveStorage:null,value:null,key:null,set:function(e,a){console.log("_localStorage.get() method seems to be return oddly when value is a string"),_localStorage.haveStorage()&&_localStorage.setKeyValue(e,a)&&localStorage.setItem(_localStorage.key,_localStorage.data)},get:function(e){return _localStorage.haveStorage()&&"undefined"!=typeof e&&"string"==typeof e?(_localStorage.value=localStorage.getItem(e),_localStorage.value=JSON.parse(_localStorage.value),_localStorage.value):(_localStorage.errors.push("no-key"),null)},setValue:function(e){"object"==typeof e?_localStorage.value=JSON.stringify(e):"function"!=typeof e&&(_localStorage.value=e)},setKey:function(e){_localStorage.key=e},haveStorage:function(){return"undefined"!=typeof Storage&&(_localStorage._haveStorage=1),_localStorage._haveStorage},setKeyValue:function(e,a){return"undefined"!=typeof a?(_localStorage.setValue(a),_localStorage.haveKeyValue=!0):(_localStorage.errors.push("no-value"),_localStorage.haveKeyValue=!1),"undefined"!=typeof e||"string"==typeof e?(_localStorage.setKey(e),_localStorage.haveKeyValue=!0):(_localStorage.errors.push("no-key"),_localStorage.haveKeyValue=!1),_localStorage.haveKeyValue}};
