@@ -27,6 +27,7 @@ if ( ! defined('THEME_ADDONS_INIT') ) {
 	require_once( "BookPostType.php" );
 	require_once( "ResourcesPostType.php" );
 	require_once( "SponsorsPostType.php" );
+	require_once( "ACFOptionsWP.php" );
 	
 	define( 'THEME_ADDONS_INIT', true );
 	

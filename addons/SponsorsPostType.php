@@ -51,7 +51,7 @@ class SponsorsPostType {
 		// add_action( 'after_setup_theme', array( &$this, 'after_setup_theme' ) );
 
 		// hook method init
-		// add_action( 'init', array( &$this, 'init' ) );
+		add_action( 'init', array( &$this, 'init' ) );
 
 		// hook method admin_init
 		add_action( 'admin_init', array( &$this, 'admin_init' ) );
@@ -97,7 +97,7 @@ class SponsorsPostType {
 	 **/
 	function init() {
 		
-        //
+		add_filter( 'pre_get_posts', array( &$this, 'pre_get_posts' ) );
 		
 	} // end function init
 	
@@ -363,8 +363,11 @@ class SponsorsPostType {
 	 * @updated 00.00.13
 	 **/
 	function edit_columns( $columns ) {
+		unset( $columns['date'] );
 		
 		$columns['image'] = __( 'Image', 'childtheme' );
+		$columns['url'] = __( 'URL', 'childtheme' );
+		$columns['position'] = __( 'Position', 'childtheme' );
 		
 		return $columns;
 	
@@ -387,10 +390,17 @@ class SponsorsPostType {
 		if ( $post->post_type == $this->registered->_post_type ) {
 			
 			switch ( $column ) {
-
-				case "image":
-					if ( has_post_thumbnail( $post->ID ) )
-						echo get_the_post_thumbnail( $post->ID, array( 50, 50 ) );
+				
+				case "position" :
+					echo get_field('_sponsors__position');
+					break;
+				case "url" :
+					echo "<a href=\"" . get_field('_sponsors__url') . "\">" . get_field('_sponsors__url') . "</a>";
+					break;
+				case "image" :
+					if ( get_field('_sponsors__image') ) {
+						echo "<img src=\"" . get_field('_sponsors__image') . "\" alt=\"\" style=\"max-height:50px;width:auto;\"/>";
+					}
 					break;
 					
 			} // end switch
@@ -494,7 +504,32 @@ class SponsorsPostType {
 			
 		} // end if ( is_admin )
 	
-	} // end function post_type_parse_query
+	} // end function post_type_parse_query 
+	
+	
+	
+	
+	
+	
+	/**
+	 * pre_get_posts
+	 * 
+	 * @version 1.0
+	 * @updated 00.00.00
+	 **/
+	function pre_get_posts( $wp_query ) {
+		
+		if ( isset( $wp_query->query['post_type'] ) AND $wp_query->query['post_type'] == $this->registered->_post_type ) {
+			$wp_query->set( 'orderby', 'meta_value_num' );
+			$wp_query->set( 'order', 'ASC' );
+			$wp_query->set( 'meta_key', '_sponsors__position' );
+			$wp_query->set( 'meta_compare', '>' );
+			$wp_query->set( 'meta_value', 0 );
+		}
+		
+		return $wp_query;
+		
+	} // end function pre_get_posts
 	
 	
 	

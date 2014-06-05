@@ -316,6 +316,20 @@ a.read_more { text-decoration:underline; font-style:italic; display:block; }
 		text-align:center; padding:$pad 0;
 	}
 }
+#loop-books {
+	text-align:center; 
+	.hentry { 
+		width:50%; float:left; line-height:16px; height:245px; overflow:hidden;
+		img { width:128px; height:195px; display:block; margin:0 auto; }
+		a { display:block; }
+		.post-wrap { padding:($pad/2); }
+	}
+	.link { height:auto; }
+}
+#loop-sponsors {
+	text-align:center;
+	.hentry { padding-top:$pad; }
+}
 
 
 

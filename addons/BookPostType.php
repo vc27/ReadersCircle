@@ -138,7 +138,7 @@ class BookPostType {
 		add_action(	$this->manage_custom_column, array( &$this, 'custom_columns' ) );
 		
 		// Add column specific filtering
-		// add_filter( 'manage_edit-' . $this->registered->_post_type . '_sortable_columns', array( &$this, 'column_register_sortable' ) );
+		add_filter( 'manage_edit-' . $this->registered->_post_type . '_sortable_columns', array( &$this, 'column_register_sortable' ) );
 		add_filter( 'request', array( &$this, 'column_orderby' ) );
 		
 		// Added for taxonomy filtering
@@ -374,33 +374,40 @@ class BookPostType {
 	/** 
 	 * Filter request for ordering
 	 * 
-	 * @version 1.2
-	 * @updated 00.00.13
+	 * @version 1.3
+	 * @updated 06.05.14
 	 **/
 	function column_orderby( $vars ) {
 		
 		// Sorting by post_meta numeric values
-		if ( isset( $vars['orderby'] ) AND $vars['orderby'] == $this->registered->_post_type ) {
+		if ( isset( $vars['orderby'] ) AND $vars['post_type'] == $this->registered->_post_type ) {
 			
-			$key_val_compair = array(
-				'meta_compare' => '>',
-				'meta_value' => 0,
-				'orderby' => 'meta_value_num'
-				);
+			$vars['meta_compare'] = '>';
+			$vars['meta_value'] = 0;
 				
 			switch ( $vars['orderby'] ) {
-				
 				case "featured" :
-					
-					$key_val_compair['meta_key'] = '_books__featured_order';
-					$vars = array_merge( $vars, $key_val_compair );
-					
-				break;
-				
-			} // end switch ( $vars['orderby'] )
+					$vars['meta_key'] = '_books__featured_order';
+					break;
+			}
 			
-		} // end if ( $vars['post_type'] == $this->post_type AND isset( $vars['orderby'] ) )
-
+			$vars['meta_query'] = array(
+				array(
+					'key' => '_books__featured_order',
+					'value' => 0,
+					'compare' => '>'
+				),
+				array(
+					'key' => '_books__is_featured',
+					'value' => 1,
+					'compare' => '='
+				),
+			);
+			
+			$vars['orderby'] = 'meta_value_num';
+			
+		} // end if ( isset( $vars['orderby'] ) )
+		
 		return $vars;
 		
 	} // end function column_orderby
@@ -455,12 +462,14 @@ class BookPostType {
 					echo "</p>";
 					break;
 				case "featured" : 
-					if ( get_field('_books__featured_order') ) {
+					if ( get_field('_books__is_featured') AND get_field('_books__featured_order') ) {
 						echo get_field('_books__featured_order');
 					}
 					break;
-				case "image":
-					if ( get_field('_books__image_url') ) {
+				case "image" :
+					if ( $image = get_field('_books__image') AND isset( $image['sizes']['medium'] ) ) {
+						echo "<img src=\"" . $image['sizes']['medium'] . "\" alt=\"\" style=\"max-width:50px;height:auto;\"/>";
+					} else if ( get_field('_books__image_url') ) {
 						echo "<img src=\"" . get_field('_books__image_url') . "\" alt=\"\" style=\"max-width:50px;height:auto;\"/>";
 					}
 					break;

@@ -11,7 +11,7 @@
 ####################################################################################################
 
 
-
+die('class ImportBooks is de-activated');
 
 
 /**
@@ -31,7 +31,7 @@ class ImportBooks {
 	 * @access public
 	 * @var string
 	 **/
-	var $querystr = "SELECT * FROM authors LIMIT 2";
+	var $querystr = "SELECT * FROM authors";
 	
 	
 	
@@ -350,6 +350,9 @@ class ImportBooks {
 						break;
 					case 'book_image' :
 						$this->append__post_meta( 'key', "_books__image_url" );
+						break;
+					case 'featured' :
+						$this->append__post_meta( 'key', "_books__is_featured" );
 						break;
 					case 'order' :
 						$this->append__post_meta( 'key', "_books__featured_order" );
