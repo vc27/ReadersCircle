@@ -46,6 +46,7 @@ class ResourcePostType {
 	function __construct() {
 		
 		$this->register_post_type();
+		$this->set__tax();
 		
 		// hook method after_setup_theme
 		// add_action( 'after_setup_theme', array( &$this, 'after_setup_theme' ) );

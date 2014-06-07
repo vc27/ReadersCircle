@@ -11,10 +11,11 @@ License GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 @import 'bootstrap-responsive';
 
 /* Padding */
-$pad: 10px;
+$p: 10px;
 
-$font-size-larg: 13px;
 $font-size-small: 11px;
+$font-size-lrg: 13px;
+$font-size-lrg-ex: 16px;
 
 /* Paragraph */
 $font-paragraph: Verdana, sans-serif;
@@ -71,20 +72,20 @@ $border-color-b: #666;
 body { line-height:$font-paragraph-line-height; font-family:$font-paragraph; height:100%; }
 #page { position:relative; font-size:$font-paragraph-size; height:100%; }
 .outer-wrap { position:relative; height:100%; }
-.inner-wrap { max-width:$max-width-a; padding-left:$pad; padding-right:$pad; position:relative; margin:0 auto; text-align:left; }
+.inner-wrap { max-width:$max-width-a; padding-left:$p; padding-right:$p; position:relative; margin:0 auto; text-align:left; }
 
 a, a:visited { text-decoration:none; }
 
 .h1, h1, .h2, h2, .h3, h3, .h4, h4, .h5, h5, .h6, h6 {
 	color:$color-blue; font-family:$font-title; font-weight:$font-title-weight; display:block; line-height:$font-title-line-height; 
-	padding-bottom:$pad; padding-top:($pad/2);
+	padding-bottom:$p; padding-top:($p/2);
 }
-.h1, h1 { font-size:$font-size-larg; }
-.h2, h2 { font-size:$font-size-larg; }
-.h3, h3 { font-size:$font-size-larg; }
-.h4, h4 { font-size:$font-size-larg; }
-.h5, h5 { font-size:$font-size-larg; }
-.h6, h6 { font-size:$font-size-larg; }
+.h1, h1 { font-size:$font-size-lrg; }
+.h2, h2 { font-size:$font-size-lrg; }
+.h3, h3 { font-size:$font-size-lrg; }
+.h4, h4 { font-size:$font-size-lrg; }
+.h5, h5 { font-size:$font-size-lrg; }
+.h6, h6 { font-size:$font-size-lrg; }
 
 
 
@@ -130,18 +131,18 @@ input[type="email"]:hover,input[type="email"]:focus {}
 #################################################################################################### */
 .btn,
 input[type="submit"],input[type="button"] {
-	cursor:pointer; display:inline-block; padding:($pad/2) ($pad);
+	cursor:pointer; display:inline-block; padding:($p/2) ($p);
 	background:$color-gray-light; border:none; font-size:$font-paragraph-size; font-family:$font-paragraph;
 }
 .btn-orange {
-	font-weight:800; font-style:italic; color:$color-blue; padding:($pad/4) ($pad*1.5);
+	font-weight:800; font-style:italic; color:$color-blue; padding:($p/4) ($p*1.5);
 	background:$color-yellow; border:solid 1px $color-orange; @include border-radius(1000px);
 }
 .btn-red {
-	text-transform:uppercase; color:#fff; padding:($pad/4) ($pad*1.5);
+	text-transform:uppercase; color:#fff; padding:($p/4) ($p*1.5);
 	background:$color-red; @include border-radius(1000px);
 }
-.btn-sml { padding:($pad/4); }
+.btn-sml { padding:($p/4); }
 
 
 
@@ -158,7 +159,7 @@ input[type="submit"],input[type="button"] {
 	li { display:inline-block; }
 	a { 
 		font-family:$font-custom; text-transform:uppercase; color:#000; line-height:14px;
-		display:inline-block; padding:0 0 0 ($pad); margin:0 ($pad) 0 0; 
+		display:inline-block; padding:0 0 0 ($p); margin:0 ($p) 0 0; 
 		border-left:solid 1px #000;
 	}
 	li:first-child a { border:none; }
@@ -169,15 +170,15 @@ input[type="submit"],input[type="button"] {
 /* footer-navigation */
 #footer-navigation {
 	li { display:inline-block; }
-	a { display:inline-block; padding:0 ($pad/4); margin:0 ($pad/4); }
+	a { display:inline-block; padding:0 ($p/4); margin:0 ($p/4); }
 }
 
 
 /* Navigation */
 .navigation-post {
-	display:block; clear:both; text-align:left; padding:($pad/4) ($pad/2);
-	.prev-post { padding-left:($pad/2); }
-	.next-post { padding-right:($pad/2); }
+	display:block; clear:both; text-align:left; padding:($p/4) ($p/2);
+	.prev-post { padding-left:($p/2); }
+	.next-post { padding-right:($p/2); }
 }
 
 .wp-pagenavi {
@@ -197,9 +198,9 @@ input[type="submit"],input[type="button"] {
 
 .hentry { position:relative; }
 #loop-default {
-	padding-bottom:($pad*4);
-	.hentry { padding:($pad*4) 0 ($pad*2) 0; }
-	.hentry:first-child { padding:0 0 ($pad*2) 0; }
+	padding-bottom:($p*4);
+	.hentry { padding:($p*4) 0 ($p*2) 0; }
+	.hentry:first-child { padding:0 0 ($p*2) 0; }
 }
 
 
@@ -207,8 +208,8 @@ input[type="submit"],input[type="button"] {
 /* Meta Data */
 .meta-data { color:$color-gray-med; font-family:$font-custom; }
 
-.post-comments { padding:0 $pad 0 0; }
-.post-date { padding:0 $pad 0 0; }
+.post-comments { padding:0 $p 0 0; }
+.post-date { padding:0 $p 0 0; }
 .read-more-dots { display:none; }
 
 
@@ -222,17 +223,17 @@ input[type="submit"],input[type="button"] {
 a.read_more { text-decoration:underline; font-style:italic; display:block; }
 
 .entry {
-	.aligncenter { display:block; margin:0 auto $pad; }
+	.aligncenter { display:block; margin:0 auto $p; }
 	.alignnone { clear:both; float:none; }
-	.alignleft { margin-right:$pad; margin-bottom:3px; }
-	.alignright { margin-left:$pad; margin-bottom:3px; }
+	.alignleft { margin-right:$p; margin-bottom:3px; }
+	.alignright { margin-left:$p; margin-bottom:3px; }
 	img { max-width:100% !important; height:auto !important; }
 	img.wp-smiley { border:none; margin:0; padding:0; box-shadow: none; -moz-box-shadow: none; -webkit-box-shadow: none; }
-    p { padding-bottom:($pad*2); }
+    p { padding-bottom:($p*2); }
     blockquote {
-		p { padding:0; margin:$pad ($pad*3) ($pad*1.5) ($pad*1.5); }
+		p { padding:0; margin:$p ($p*3) ($p*1.5) ($p*1.5); }
 	}
-	ol, ul { margin:$pad 0 ($pad*2) 20px; }
+	ol, ul { margin:$p 0 ($p*2) 20px; }
 	ul { list-style:disc; }
 	ol { list-style:decimal; }
 	li { padding-bottom:7px; }
@@ -240,12 +241,12 @@ a.read_more { text-decoration:underline; font-style:italic; display:block; }
 	small { font-size:11px; }
 	table {
 		line-height:18px;
-		th, td { padding:($pad/2); vertical-align:top; border-right:solid 1px #fff; }
+		th, td { padding:($p/2); vertical-align:top; border-right:solid 1px #fff; }
 		th { background:$color-gray-light-ex; }
 	}
 } /*end .entry */
 
-.excerpt p { padding-bottom:($pad*2); }
+.excerpt p { padding-bottom:($p*2); }
 
 
 
@@ -297,38 +298,65 @@ a.read_more { text-decoration:underline; font-style:italic; display:block; }
 
 
 
+/*Books*/
+.hentry-book { 
+	float:left; line-height:16px; height:245px; overflow:hidden; text-align:center; 
+	img { width:128px; height:195px; display:block; margin:0 auto; }
+	a { display:block; }
+	.post-wrap { padding:($p/2); }
+}
+
+
+
+
+
+
 /* Blocks
 #################################################################################################### */
 #header {
-	padding-bottom:$pad;
-	.logo-text-full { max-width:240px; height:auto; padding:$pad ($pad*2) 0; }
-	.img-header { max-width:100%; height:auto; padding:($pad/4) 0 0; }
+	padding-bottom:$p;
+	.logo-text-full { max-width:240px; height:auto; padding:$p ($p*2) 0; }
+	.img-header { max-width:100%; height:auto; padding:($p/4) 0 0; }
 	strong { color:$color-blue; }
 	
 	.top-right { 
-		float:right; padding:$pad; 
-		a, .meta-data { display:inline-block; margin:0 ($pad/4); vertical-align:middle; }
+		float:right; padding:$p; 
+		a, .meta-data { display:inline-block; margin:0 ($p/4); vertical-align:middle; }
 		a.ic { font-size:30px; color:$color-gray-light; }
 	}
 }
 #footer {
 	.inner-wrap {
-		text-align:center; padding:$pad 0;
+		text-align:center; padding:$p 0;
 	}
 }
 #loop-books {
 	text-align:center; 
-	.hentry { 
-		width:50%; float:left; line-height:16px; height:245px; overflow:hidden;
-		img { width:128px; height:195px; display:block; margin:0 auto; }
-		a { display:block; }
-		.post-wrap { padding:($pad/2); }
-	}
+	.hentry-book { width:50%; }
 	.link { height:auto; }
 }
 #loop-sponsors {
 	text-align:center;
-	.hentry { padding-top:$pad; }
+	.hentry { padding-top:$p; }
+}
+
+
+
+
+
+
+/* tax-books, page-template-taxonomy-books-php
+#################################################################################################### */
+
+body.author-book-directory {
+	#loop-default { padding-bottom:0; }
+	#links-author-books-directory {
+		font-size:$font-size-lrg-ex; padding-bottom:($p*2);
+		li { display:inline-block; padding:0 ($p/2); }
+	}
+	#loop-archive-author-books {
+		.hentry-book { width:160px; }
+	}
 }
 
 

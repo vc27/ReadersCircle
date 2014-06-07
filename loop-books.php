@@ -45,24 +45,11 @@ if ( have_posts() ) {
 			echo get_field('_col_books_content','option');
 		echo "</div>";
 		echo "<div class=\"body\">";
-			echo "<div class=\"hentry link\"><a href=\"#\">Browse all authors</a></div>";
-			echo "<div class=\"hentry link\"><a href=\"#\">List your book</a></div>";
+			echo "<div class=\"hentry-book link\"><a href=\"" . get_field('_col_books_browse_authors_url','option') . "\">Browse all authors</a></div>";
+			echo "<div class=\"hentry-book link\"><a href=\"" . get_field('_col_books_list_your_book_url','option') . "\">List your book</a></div>";
 			while ( have_posts() ) {
 				the_post();
-				if ( $image = get_field('_books__image') AND isset( $image['url'] ) ) {
-					$image = $image['url'];
-				} else if ( get_field('_books__image_url') ) {
-					$image = get_field('_books__image_url');
-				}
-				
-				echo "<div "; post_class(); echo " itemscope itemtype=\"http://schema.org/Book\">";
-					echo "<div class=\"post-wrap\">";
-						echo "<a href=\"" . get_field('_books__book_url') . "\" target=\"_blank\"><img itemprop=\"image\" src=\"$image\" alt=\"\"/></a>";
-						echo "<span itemprop=\"name\">" . get_the_title() . "</span>";
-						echo "<a itemprop=\"author\" href=\"mailto:" . antispambot( get_field('_books__email') ) . "\" target=\"_blank\">" . get_field('_books__first_name') . " " . get_field('_books__last_name') . "</a>";
-					echo "</div>";
-				echo "</div>";
-
+				echo ThemeSupport::single_book_display();
 			} // end while ( have_posts() )
 		echo "</div>";
 		

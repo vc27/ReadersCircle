@@ -23,7 +23,7 @@ if ( have_posts() ) {
 		echo "<div class=\"head entry\">";
 			echo "<div class=\"h3\">" . get_field('_col_sponsors_title','option') . "</div>";
 			echo get_field('_col_sponsors_content','option');
-			echo "<a href=\"#\">Become a Sponsor</a>";
+			echo "<a href=\"" . get_field('_col_sponsors_become_a_sponsor_url','option') . "\">Become a Sponsor</a>";
 		echo "</div>";
 		echo "<div class=\"body\">";
 			while ( have_posts() ) {

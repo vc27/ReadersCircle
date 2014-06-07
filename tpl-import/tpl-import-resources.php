@@ -11,6 +11,14 @@
  **/
 ####################################################################################################
 
+create an error so I will come back here to see this note...
+
+/**
+There is a taxonomy called Region with the slug of "/resources". Apply the state abbr to this field.
+- create "custom fields" for all the rest of the location data associated with each resources.
+- duplicate the state abbr as "custom field" as well as the resources/region "term"
+**/
+
 
 
 
@@ -31,7 +39,7 @@ class ImportResourcesVCWP {
 	 * @access public
 	 * @var string
 	 **/
-	var $querystr = "SELECT * FROM resource";
+	var $querystr = "SELECT * FROM resource LIMIT 2";
 	
 	
 	
@@ -159,7 +167,10 @@ class ImportResourcesVCWP {
 		if ( $this->have_raw_resources() ) {
 			$this->process_resources();
 			
-			$this->imported__posts = create__posts( $this->resources );
+			$CreatePostsVCWP = create__posts( $this->resources, array(
+				'overwrite_posts' => true
+			) );
+			print_r($CreatePostsVCWP);
 			
 		}
 		
@@ -320,4 +331,3 @@ class ImportResourcesVCWP {
 
 $resources = new ImportResourcesVCWP();
 $resources->import();
-print_r($resources);

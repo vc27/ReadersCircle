@@ -104,6 +104,7 @@ class ThemeSupport {
 	function init() {
 		
 		$this->register_style_and_scripts();
+		add_filter( 'body_class', array( &$this, 'body_class' ) ) ;
 		
 	} // end function init
 	
@@ -385,16 +386,21 @@ class ThemeSupport {
 	
 	
 	/**
-	 * my_dashboard_widget
+	 * body_class
 	 *
 	 * @version 1.0
 	 * @updated 00.00.00
 	 **/
-	function my_dashboard_widget() {
-
-		echo "Hello World, I'm a great Dashboard Widget";
+	function body_class( $classes ) {
+		global $wp_query;
 		
-	} // end function my_dashboard_widget
+		if ( is_page_template('taxonomy-books.php') OR isset( $wp_query->query['books'] ) AND ! empty( $wp_query->query['books'] ) ) {
+			$classes[] = 'author-book-directory';
+		}
+		
+		return $classes;
+		
+	} // end function body_class
 	
 	
 	
@@ -432,20 +438,30 @@ class ThemeSupport {
 	
 	
 	/**
-	 * insert_cform
+	 * single_book_display
 	 *
 	 * @version 1.0
 	 * @updated 00.00.13
 	 **/
-	static function insert_cform( $id ) {
+	static function single_book_display() {
 		
-		if ( function_exists( 'insert_cform' ) ) {
-
-			echo insert_cform( $id );
-
+		if ( $image = get_field('_books__image') AND isset( $image['url'] ) ) {
+			$image = $image['url'];
+		} else if ( get_field('_books__image_url') ) {
+			$image = get_field('_books__image_url');
 		}
 		
-	} // end function insert_cform
+		$output = "<div class=\"hentry-book\" itemscope itemtype=\"http://schema.org/Book\">";
+			$output .= "<div class=\"post-wrap\">";
+				$output .= "<a href=\"" . get_field('_books__book_url') . "\" target=\"_blank\"><img itemprop=\"image\" src=\"$image\" alt=\"\"/></a>";
+				$output .= "<span itemprop=\"name\">" . get_the_title() . "</span>";
+				$output .= "<a itemprop=\"author\" href=\"mailto:" . antispambot( get_field('_books__email') ) . "\" target=\"_blank\">" . get_field('_books__first_name') . " " . get_field('_books__last_name') . "</a>";
+			$output .= "</div>";
+		$output .= "</div>";
+		
+		return $output;
+		
+	} // end function single_book_display
 	
 	
 	
