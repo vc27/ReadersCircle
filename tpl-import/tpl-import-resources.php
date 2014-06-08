@@ -11,15 +11,7 @@
  **/
 ####################################################################################################
 
-create an error so I will come back here to see this note...
-
-/**
-There is a taxonomy called Region with the slug of "/resources". Apply the state abbr to this field.
-- create "custom fields" for all the rest of the location data associated with each resources.
-- duplicate the state abbr as "custom field" as well as the resources/region "term"
-**/
-
-
+die('class ImportResourcesVCWP is de-activated');
 
 
 
@@ -39,7 +31,7 @@ class ImportResourcesVCWP {
 	 * @access public
 	 * @var string
 	 **/
-	var $querystr = "SELECT * FROM resource LIMIT 2";
+	var $querystr = "SELECT * FROM resource";
 	
 	
 	
@@ -212,8 +204,7 @@ class ImportResourcesVCWP {
 		
 		$this->resources[$this->k]['post'] = array(
 			'post_title' => $this->resource->name,
-			'post_excerpt' => $this->resource->content,
-			'post_type' => 'resources',
+			'post_type' => 'resource',
 			'post_status' => 'publish'
 		);
 		
@@ -237,13 +228,38 @@ class ImportResourcesVCWP {
 				'key' => '_resources__url',
 				'value' => $this->resource->url,
 				'unique' => 1,
-				),
+			),
 			'_resources__email' => array(
 				'key' => '_resources__email',
 				'value' => $this->resource->email,
 				'unique' => 1,
-				),
-			);
+			),
+			'_resources__city' => array(
+				'key' => '_resources__city',
+				'value' => $this->resource->city,
+				'unique' => 1,
+			),
+			'_resources__state' => array(
+				'key' => '_resources__state',
+				'value' => $this->resource->state,
+				'unique' => 1,
+			),
+			'_resources__region_abbr' => array(
+				'key' => '_resources__region_abbr',
+				'value' => $this->resource->state_abbr,
+				'unique' => 1,
+			),
+			'_resources__country' => array(
+				'key' => '_resources__country',
+				'value' => $this->resource->country,
+				'unique' => 1,
+			),
+			'_resources__type' => array(
+				'key' => '_resources__type',
+				'value' => $this->resource->type,
+				'unique' => 1,
+			),
+		);
 		
 	} // end function append__resource__post_meta 
 	
@@ -261,32 +277,12 @@ class ImportResourcesVCWP {
 	function append__resource__terms() {
 		
 		$this->resources[$this->k]['post_terms'] = array(
-			'city' => array(
+			'resources' => array(
 				'append_terms' => false,
-				'taxonomy' => 'city',
-				'terms' => array( $this->resource->city ),
-				),
-			'state' => array(
-				'append_terms' => false,
-				'taxonomy' => 'state',
+				'taxonomy' => 'resources',
 				'terms' => array( $this->resource->state ),
-				),
-			'state-abbr' => array(
-				'append_terms' => false,
-				'taxonomy' => 'state-abbr',
-				'terms' => array( $this->resource->state_abbr ),
-				),
-			'country' => array(
-				'append_terms' => false,
-				'taxonomy' => 'country',
-				'terms' => array( $this->resource->country ),
-				),
-			'resource-type' => array(
-				'append_terms' => false,
-				'taxonomy' => 'resource-type',
-				'terms' => array( $this->resource->type ),
-				),
-			);
+			),
+		);
 		
 	} // end function append__resource__terms
 	

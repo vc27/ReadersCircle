@@ -417,9 +417,9 @@ class ResourcePostType {
 	 * @updated 00.00.13
 	 **/
 	function edit_columns( $columns ) {
-		
-		$columns['image'] = __( 'Image', 'childtheme' );
-		
+		unset($columns['date']);
+		$columns['region'] = __( 'Region', 'childtheme' );
+		$columns['details'] = __( 'Details', 'childtheme' );
 		return $columns;
 	
 	} // end edit_columns
@@ -441,10 +441,41 @@ class ResourcePostType {
 		if ( $post->post_type == $this->registered->_post_type ) {
 			
 			switch ( $column ) {
-
-				case "image":
-					if ( has_post_thumbnail( $post->ID ) )
-						echo get_the_post_thumbnail( $post->ID, array( 50, 50 ) );
+				
+				case "region" : 
+					$terms = wp_get_post_terms( $post->ID, 'resources' );
+					if ( ! is_wp_error($terms) ) {
+						echo "<p>";
+						foreach ( $terms as $term ) {
+							echo $term->name . ' ';
+						}
+						echo "</p>";
+					}
+					break;
+				case "details":
+					echo "<p>";
+						if ( get_field('_resources__type') ) {
+							echo "Type: " . get_field('_resources__type') . "<br />";
+						}
+						if ( get_field('_resources__email') ) {
+							echo "<a href=\"malto:" . get_field('_resources__email') . "\">" . get_field('_resources__email') . "</a><br />";
+						}
+						if ( get_field('_resources__url') ) {
+							echo "<a href=\"" . get_field('_resources__url') . "\" target=\"_blank\">" . get_field('_resources__url') . "</a><br />";
+						}
+						if ( get_field('_resources__city') ) {
+							echo "City: " . get_field('_resources__city') . "<br />";
+						}
+						if ( get_field('_resources__state') ) {
+							echo "Region / State: " . get_field('_resources__state') . "<br />";
+						}
+						if ( get_field('_resources__region_abbr') ) {
+							echo "Region Abbr: " . get_field('_resources__region_abbr') . "<br />";
+						}
+						if ( get_field('_resources__country') ) {
+							echo "Country: " . get_field('_resources__country') . "<br />";
+						}
+					echo "</p>";
 					break;
 					
 			} // end switch

@@ -364,6 +364,21 @@ body.author-book-directory {
 
 
 
+/* body.tax-resources
+#################################################################################################### */
+
+body.tax-resources {
+	#list-resources { 
+		padding-top:($p); 
+		ul { padding-bottom:($p*2); }
+	}
+}
+
+
+
+
+
+
 /* Comments */
 @import 'comments';
 /*Responsive*/

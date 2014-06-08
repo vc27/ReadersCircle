@@ -967,6 +967,13 @@ body.author-book-directory #links-author-books-directory li { display: inline-bl
 /* line 358, ../sass/default.scss */
 body.author-book-directory #loop-archive-author-books .hentry-book { width: 160px; }
 
+/* body.tax-resources
+#################################################################################################### */
+/* line 371, ../sass/default.scss */
+body.tax-resources #list-resources { padding-top: 10px; }
+/* line 373, ../sass/default.scss */
+body.tax-resources #list-resources ul { padding-bottom: 20px; }
+
 /* Comments */
 /* 
 File Name comments.css
