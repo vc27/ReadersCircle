@@ -753,226 +753,253 @@ a, a:visited { text-decoration: none; }
 
 /* Forms
 #################################################################################################### */
-/* line 101, ../sass/default.scss */
-textarea, input[type="text"], input[type="password"], input[type="email"] { font-size: 12px; font-family: Verdana, sans-serif; width: 97%; border: solid 1px #aaaaaa; border-top-color: #666666; padding: 3px 1%; }
+/* 
+File Name: responsive.css
+Version: 1.2
+Updated: 08.16.13
+Package: ParentTheme_VC
+License: GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+#################################################################################################### */
+/* line 12, ../sass/gmw-reset.scss */
+#gmw-form-wrap div.gmw-form-wrapper input[type="text"] { margin: 0; padding: 0; }
 
-/* line 109, ../sass/default.scss */
+/* line 102, ../sass/default.scss */
+textarea, input[type="text"], input[type="password"], input[type="email"], input[type="submit"] { font-size: 12px; font-family: Verdana, sans-serif; line-height: 18px; width: 97%; border: solid 1px #aaaaaa; border-top-color: #666666; padding: 3px 1%; }
+
+/* line 111, ../sass/default.scss */
 textarea { height: 100px; }
 
-/* line 110, ../sass/default.scss */
+/* line 112, ../sass/default.scss */
 label.error { color: red; }
 
 /* remove webkit css
 select, input, textarea { -webkit-appearance: none; }*/
+/* line 127, ../sass/default.scss */
+.gmw-address-field-wrapper, .gmw-submit-wrapper { display: inline-block; }
+/* line 129, ../sass/default.scss */
+.gmw-address-field-wrapper input, .gmw-submit-wrapper input { display: inline-block; }
+
 /* Buttons
 #################################################################################################### */
-/* line 132, ../sass/default.scss */
-.btn, input[type="submit"], input[type="button"] { cursor: pointer; display: inline-block; padding: 5px 10px; background: #dddddd; border: none; font-size: 12px; font-family: Verdana, sans-serif; }
+/* line 139, ../sass/default.scss */
+.btn, input.gmw-submit, input[type="submit"], input[type="button"] { cursor: pointer; display: inline-block; padding: 5px 10px; background: #dddddd; border: none; font-size: 12px; font-family: Verdana, sans-serif; }
 
-/* line 137, ../sass/default.scss */
+/* line 144, ../sass/default.scss */
 .btn-orange { font-weight: 800; font-style: italic; color: #183477; padding: 2.5px 15px; background: #fee4af; border: solid 1px #ffaa55; -webkit-border-radius: 1000px; -moz-border-radius: 1000px; -ms-border-radius: 1000px; border-radius: 1000px; }
 
-/* line 141, ../sass/default.scss */
-.btn-red { text-transform: uppercase; color: #fff; padding: 2.5px 15px; background: #742616; -webkit-border-radius: 1000px; -moz-border-radius: 1000px; -ms-border-radius: 1000px; border-radius: 1000px; }
+/* line 148, ../sass/default.scss */
+input.gmw-submit, .btn-red { text-transform: uppercase; color: #fff; padding: 2.5px 15px; background: #742616; -webkit-border-radius: 1000px; -moz-border-radius: 1000px; -ms-border-radius: 1000px; border-radius: 1000px; }
 
-/* line 145, ../sass/default.scss */
+/* line 153, ../sass/default.scss */
 .btn-sml { padding: 2.5px; }
+
+/* line 156, ../sass/default.scss */
+#gmw-form-wrap input.gmw-address { text-indent: 7px; line-height: 30px; display: inline-block; }
+/* line 157, ../sass/default.scss */
+#gmw-form-wrap .gmw-submit-wrapper { margin-left: 5px; display: inline-block; }
+/* line 159, ../sass/default.scss */
+#gmw-form-wrap .gmw-submit-wrapper input.gmw-submit { padding: 5px; }
 
 /* General Links
 #################################################################################################### */
 /* Main Navigation Links */
-/* line 157, ../sass/default.scss */
+/* line 173, ../sass/default.scss */
 #primary-navigation { text-align: right; }
-/* line 159, ../sass/default.scss */
+/* line 175, ../sass/default.scss */
 #primary-navigation li { display: inline-block; }
-/* line 160, ../sass/default.scss */
+/* line 176, ../sass/default.scss */
 #primary-navigation a { font-family: Georgia, sans-serif; text-transform: uppercase; color: #000; line-height: 14px; display: inline-block; padding: 0 0 0 10px; margin: 0 10px 0 0; border-left: solid 1px #000; }
-/* line 165, ../sass/default.scss */
+/* line 181, ../sass/default.scss */
 #primary-navigation li:first-child a { border: none; }
 
 /* footer-navigation */
-/* line 172, ../sass/default.scss */
+/* line 188, ../sass/default.scss */
 #footer-navigation li { display: inline-block; }
-/* line 173, ../sass/default.scss */
+/* line 189, ../sass/default.scss */
 #footer-navigation a { display: inline-block; padding: 0 2.5px; margin: 0 2.5px; }
 
 /* Navigation */
-/* line 178, ../sass/default.scss */
+/* line 194, ../sass/default.scss */
 .navigation-post { display: block; clear: both; text-align: left; padding: 2.5px 5px; }
-/* line 180, ../sass/default.scss */
+/* line 196, ../sass/default.scss */
 .navigation-post .prev-post { padding-left: 5px; }
-/* line 181, ../sass/default.scss */
+/* line 197, ../sass/default.scss */
 .navigation-post .next-post { padding-right: 5px; }
 
-/* line 185, ../sass/default.scss */
+/* line 201, ../sass/default.scss */
 .wp-pagenavi a, .wp-pagenavi span { padding: 3px 4px; margin: 3px; }
 
-/* line 188, ../sass/default.scss */
+/* line 204, ../sass/default.scss */
 #navigation-breadcrumb { font-weight: bold; padding-bottom: 3px; display: block; clear: both; }
 
-/* line 189, ../sass/default.scss */
+/* line 205, ../sass/default.scss */
 .navigation-posts { font-weight: bold; padding-bottom: 3px; display: block; clear: both; text-align: center; }
 
 /* Post, Page & General Loops
 #################################################################################################### */
-/* line 199, ../sass/default.scss */
+/* line 215, ../sass/default.scss */
 .hentry { position: relative; }
 
-/* line 200, ../sass/default.scss */
+/* line 216, ../sass/default.scss */
 #loop-default { padding-bottom: 40px; }
-/* line 202, ../sass/default.scss */
+/* line 218, ../sass/default.scss */
 #loop-default .hentry { padding: 40px 0 20px 0; }
-/* line 203, ../sass/default.scss */
+/* line 219, ../sass/default.scss */
 #loop-default .hentry:first-child { padding: 0 0 20px 0; }
 
 /* Meta Data */
-/* line 209, ../sass/default.scss */
+/* line 225, ../sass/default.scss */
 .meta-data { color: #868789; font-family: Georgia, sans-serif; }
 
-/* line 211, ../sass/default.scss */
+/* line 227, ../sass/default.scss */
 .post-comments { padding: 0 10px 0 0; }
 
-/* line 212, ../sass/default.scss */
+/* line 228, ../sass/default.scss */
 .post-date { padding: 0 10px 0 0; }
 
-/* line 213, ../sass/default.scss */
+/* line 229, ../sass/default.scss */
 .read-more-dots { display: none; }
 
 /* Entry - Excerpt */
-/* line 219, ../sass/default.scss */
+/* line 235, ../sass/default.scss */
 #loop-default .entry { clear: both; }
-/* line 220, ../sass/default.scss */
+/* line 236, ../sass/default.scss */
 #loop-default .excerpt { clear: none; padding: 0; }
 
-/* line 223, ../sass/default.scss */
+/* line 239, ../sass/default.scss */
 a.read_more { text-decoration: underline; font-style: italic; display: block; }
 
-/* line 226, ../sass/default.scss */
-.entry .aligncenter { display: block; margin: 0 auto 10px; }
-/* line 227, ../sass/default.scss */
-.entry .alignnone { clear: both; float: none; }
-/* line 228, ../sass/default.scss */
-.entry .alignleft { margin-right: 10px; margin-bottom: 3px; }
-/* line 229, ../sass/default.scss */
-.entry .alignright { margin-left: 10px; margin-bottom: 3px; }
-/* line 230, ../sass/default.scss */
-.entry img { max-width: 100% !important; height: auto !important; }
-/* line 231, ../sass/default.scss */
-.entry img.wp-smiley { border: none; margin: 0; padding: 0; box-shadow: none; -moz-box-shadow: none; -webkit-box-shadow: none; }
-/* line 232, ../sass/default.scss */
-.entry p { padding-bottom: 20px; }
-/* line 234, ../sass/default.scss */
-.entry blockquote p { padding: 0; margin: 10px 30px 15px 15px; }
-/* line 236, ../sass/default.scss */
-.entry ol, .entry ul { margin: 10px 0 20px 20px; }
-/* line 237, ../sass/default.scss */
-.entry ul { list-style: disc; }
-/* line 238, ../sass/default.scss */
-.entry ol { list-style: decimal; }
-/* line 239, ../sass/default.scss */
-.entry li { padding-bottom: 7px; }
-/* line 241, ../sass/default.scss */
-.entry small { font-size: 11px; }
 /* line 242, ../sass/default.scss */
-.entry table { line-height: 18px; }
+.entry .aligncenter { display: block; margin: 0 auto 10px; }
+/* line 243, ../sass/default.scss */
+.entry .alignnone { clear: both; float: none; }
 /* line 244, ../sass/default.scss */
-.entry table th, .entry table td { padding: 5px; vertical-align: top; border-right: solid 1px #fff; }
+.entry .alignleft { margin-right: 10px; margin-bottom: 3px; }
 /* line 245, ../sass/default.scss */
+.entry .alignright { margin-left: 10px; margin-bottom: 3px; }
+/* line 246, ../sass/default.scss */
+.entry img { max-width: 100% !important; height: auto !important; }
+/* line 247, ../sass/default.scss */
+.entry img.wp-smiley { border: none; margin: 0; padding: 0; box-shadow: none; -moz-box-shadow: none; -webkit-box-shadow: none; }
+/* line 248, ../sass/default.scss */
+.entry p { padding-bottom: 20px; }
+/* line 250, ../sass/default.scss */
+.entry blockquote p { padding: 0; margin: 10px 30px 15px 15px; }
+/* line 252, ../sass/default.scss */
+.entry ol, .entry ul { margin: 10px 0 20px 20px; }
+/* line 253, ../sass/default.scss */
+.entry ul { list-style: disc; }
+/* line 254, ../sass/default.scss */
+.entry ol { list-style: decimal; }
+/* line 255, ../sass/default.scss */
+.entry li { padding-bottom: 7px; }
+/* line 257, ../sass/default.scss */
+.entry small { font-size: 11px; }
+/* line 258, ../sass/default.scss */
+.entry table { line-height: 18px; }
+/* line 260, ../sass/default.scss */
+.entry table th, .entry table td { padding: 5px; vertical-align: top; border-right: solid 1px #fff; }
+/* line 261, ../sass/default.scss */
 .entry table th { background: whitesmoke; }
 
 /*end .entry */
-/* line 249, ../sass/default.scss */
+/* line 265, ../sass/default.scss */
 .excerpt p { padding-bottom: 20px; }
 
 /* Gallery Shortcode */
-/* line 255, ../sass/default.scss */
+/* line 271, ../sass/default.scss */
 .gallery dl.gallery-item { display: block; float: left; }
 
-/* line 262, ../sass/default.scss */
+/* line 278, ../sass/default.scss */
 .wp-caption { max-width: 96%; display: block; text-align: center !important; padding: 5px; background: #eee; }
-/* line 264, ../sass/default.scss */
+/* line 280, ../sass/default.scss */
 .wp-caption p { font-size: 11px; line-height: 14px; padding: 5px 0 7px; }
-/* line 265, ../sass/default.scss */
+/* line 281, ../sass/default.scss */
 .wp-caption img { display: inline; }
 
 /* All sitemap style layouts - search, 404, sitemap */
-/* line 272, ../sass/default.scss */
+/* line 288, ../sass/default.scss */
 .layout-sitemap .display-list { margin: 0 2% 20px 0; width: 48%; float: left; }
-/* line 275, ../sass/default.scss */
+/* line 291, ../sass/default.scss */
 .layout-sitemap .display-list ul { margin: 10px 0 0 0; }
-/* line 276, ../sass/default.scss */
+/* line 292, ../sass/default.scss */
 .layout-sitemap .display-list ul ul { margin: 0 0 7px 15px; list-style: disc; }
-/* line 277, ../sass/default.scss */
+/* line 293, ../sass/default.scss */
 .layout-sitemap .display-list ul ul.children { padding: 0; margin-left: 15px; list-style: disc; }
-/* line 279, ../sass/default.scss */
+/* line 295, ../sass/default.scss */
 .layout-sitemap .display-list .site-search { display: block; padding-bottom: 10px; }
 
 /* Widget Areas
 #################################################################################################### */
-/* line 291, ../sass/default.scss */
+/* line 307, ../sass/default.scss */
 .sidebar ul li { margin-bottom: 10px; }
-/* line 292, ../sass/default.scss */
+/* line 308, ../sass/default.scss */
 .sidebar ul li li { margin: 0; }
 
 /*Books*/
-/* line 302, ../sass/default.scss */
+/* line 318, ../sass/default.scss */
 .hentry-book { float: left; line-height: 16px; height: 245px; overflow: hidden; text-align: center; }
-/* line 304, ../sass/default.scss */
+/* line 320, ../sass/default.scss */
 .hentry-book img { width: 128px; height: 195px; display: block; margin: 0 auto; }
-/* line 305, ../sass/default.scss */
+/* line 321, ../sass/default.scss */
 .hentry-book a { display: block; }
-/* line 306, ../sass/default.scss */
+/* line 322, ../sass/default.scss */
 .hentry-book .post-wrap { padding: 5px; }
 
 /* Blocks
 #################################################################################################### */
-/* line 316, ../sass/default.scss */
+/* line 332, ../sass/default.scss */
 #header { padding-bottom: 10px; }
-/* line 318, ../sass/default.scss */
+/* line 334, ../sass/default.scss */
 #header .logo-text-full { max-width: 240px; height: auto; padding: 10px 20px 0; }
-/* line 319, ../sass/default.scss */
+/* line 335, ../sass/default.scss */
 #header .img-header { max-width: 100%; height: auto; padding: 2.5px 0 0; }
-/* line 320, ../sass/default.scss */
+/* line 336, ../sass/default.scss */
 #header strong { color: #183477; }
-/* line 322, ../sass/default.scss */
+/* line 338, ../sass/default.scss */
 #header .top-right { float: right; padding: 10px; }
-/* line 324, ../sass/default.scss */
+/* line 340, ../sass/default.scss */
 #header .top-right a, #header .top-right .meta-data { display: inline-block; margin: 0 2.5px; vertical-align: middle; }
-/* line 325, ../sass/default.scss */
+/* line 341, ../sass/default.scss */
 #header .top-right a.ic { font-size: 30px; color: #dddddd; }
 
-/* line 329, ../sass/default.scss */
-#footer .inner-wrap { text-align: center; padding: 10px 0; }
+/* line 345, ../sass/default.scss */
+#footer .inner-wrap { text-align: center; padding: 40px 0 20px; }
 
-/* line 333, ../sass/default.scss */
+/* line 349, ../sass/default.scss */
 #loop-books { text-align: center; }
-/* line 335, ../sass/default.scss */
+/* line 351, ../sass/default.scss */
 #loop-books .hentry-book { width: 50%; }
-/* line 336, ../sass/default.scss */
+/* line 352, ../sass/default.scss */
 #loop-books .link { height: auto; }
 
-/* line 338, ../sass/default.scss */
+/* line 354, ../sass/default.scss */
 #loop-sponsors { text-align: center; }
-/* line 340, ../sass/default.scss */
+/* line 356, ../sass/default.scss */
 #loop-sponsors .hentry { padding-top: 10px; }
 
 /* tax-books, page-template-taxonomy-books-php
 #################################################################################################### */
-/* line 352, ../sass/default.scss */
+/* line 368, ../sass/default.scss */
 body.author-book-directory #loop-default { padding-bottom: 0; }
-/* line 353, ../sass/default.scss */
+/* line 369, ../sass/default.scss */
 body.author-book-directory #links-author-books-directory { font-size: 16px; padding-bottom: 20px; }
-/* line 355, ../sass/default.scss */
+/* line 371, ../sass/default.scss */
 body.author-book-directory #links-author-books-directory li { display: inline-block; padding: 0 5px; }
-/* line 358, ../sass/default.scss */
+/* line 374, ../sass/default.scss */
 body.author-book-directory #loop-archive-author-books .hentry-book { width: 160px; }
 
 /* body.tax-resources
 #################################################################################################### */
-/* line 371, ../sass/default.scss */
+/* line 387, ../sass/default.scss */
 body.tax-resources #list-resources { padding-top: 10px; }
-/* line 373, ../sass/default.scss */
+/* line 389, ../sass/default.scss */
 body.tax-resources #list-resources ul { padding-bottom: 20px; }
+
+/* body.page-template-tpl-search-php
+#################################################################################################### */
+/* line 402, ../sass/default.scss */
+body.page-template-tpl-search-php #loop-default .hentry:first-child { padding-bottom: 0; }
 
 /* Comments */
 /* 

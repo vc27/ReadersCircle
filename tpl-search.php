@@ -24,7 +24,7 @@ get_template_part( 'header' );
 		?>
 	</div>
 	<div class="span4">
-		sidebar here
+		<?php get_template_part( 'loop-sponsors' ); ?>
 	</div>
 </div>
 <?php

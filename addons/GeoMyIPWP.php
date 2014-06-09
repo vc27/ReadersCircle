@@ -246,7 +246,7 @@ class GeoMyIPWP {
 			$output = "";
 
 			$output .= "<select id=\"country\" required>";
-				$output .= "<option value=\"\">Select a country</option>";
+				// $output .= "<option value=\"\">Select a country</option>";
 				foreach ( $countries as $country ) {
 					$output .= "<option value=\"$country\">$country</option>";
 				}

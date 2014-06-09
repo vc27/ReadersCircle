@@ -98,11 +98,13 @@ a, a:visited { text-decoration:none; }
 
 /* Forms
 #################################################################################################### */
+@import 'gmw-reset';
 textarea,
 input[type="text"],
 input[type="password"],
-input[type="email"] { 
-	font-size:$font-paragraph-size; font-family:$font-paragraph;
+input[type="email"],
+input[type="submit"] { 
+	font-size:$font-paragraph-size; font-family:$font-paragraph; line-height:$font-paragraph-line-height;
 	width:97%;
 	border:solid 1px $border-color-a; border-top-color:$border-color-b; padding:3px 1%;
 }
@@ -122,6 +124,11 @@ input[type="text"]:hover,input[type="text"]:focus,
 input[type="password"]:hover,input[type="password"]:focus,
 input[type="email"]:hover,input[type="email"]:focus {}
 
+.gmw-address-field-wrapper, .gmw-submit-wrapper {
+	display:inline-block;
+	input { display:inline-block; }
+}
+
 
 
 
@@ -129,7 +136,7 @@ input[type="email"]:hover,input[type="email"]:focus {}
 
 /* Buttons
 #################################################################################################### */
-.btn,
+.btn, input.gmw-submit,
 input[type="submit"],input[type="button"] {
 	cursor:pointer; display:inline-block; padding:($p/2) ($p);
 	background:$color-gray-light; border:none; font-size:$font-paragraph-size; font-family:$font-paragraph;
@@ -138,11 +145,20 @@ input[type="submit"],input[type="button"] {
 	font-weight:800; font-style:italic; color:$color-blue; padding:($p/4) ($p*1.5);
 	background:$color-yellow; border:solid 1px $color-orange; @include border-radius(1000px);
 }
+input.gmw-submit,
 .btn-red {
 	text-transform:uppercase; color:#fff; padding:($p/4) ($p*1.5);
 	background:$color-red; @include border-radius(1000px);
 }
 .btn-sml { padding:($p/4); }
+
+#gmw-form-wrap {
+	input.gmw-address { text-indent:7px; line-height:30px; display:inline-block; }
+	.gmw-submit-wrapper { 
+		margin-left:($p/2); display:inline-block;
+		input.gmw-submit { padding:5px; }
+	}
+}
 
 
 
@@ -327,7 +343,7 @@ a.read_more { text-decoration:underline; font-style:italic; display:block; }
 }
 #footer {
 	.inner-wrap {
-		text-align:center; padding:$p 0;
+		text-align:center; padding:($p*4) 0 ($p*2);
 	}
 }
 #loop-books {
@@ -372,6 +388,18 @@ body.tax-resources {
 		padding-top:($p); 
 		ul { padding-bottom:($p*2); }
 	}
+}
+
+
+
+
+
+
+/* body.page-template-tpl-search-php
+#################################################################################################### */
+
+body.page-template-tpl-search-php {
+	#loop-default .hentry:first-child { padding-bottom:0; }
 }
 
 
