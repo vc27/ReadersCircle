@@ -303,9 +303,8 @@ class ThemeSupport {
 	 **/
 	function register_style_and_scripts() {
 		
-		wp_register_script( 'childTheme', "$this->stylesheet_directory_uri/js/childTheme.js", array( 'jquery' ) );
 		wp_register_style( 'style-admin', "$this->stylesheet_directory_uri/css/style-admin.css" );
-		wp_register_script( 'custom-admin-js', "$this->stylesheet_directory_uri/js/adminJs.js", array( 'jquery' ) );
+		wp_register_script( 'custom-admin-js', "$this->stylesheet_directory_uri/js/min/adminJs-min.js", array( 'jquery' ) );
 		
 	} // end function register_style_and_scripts
 	
@@ -326,23 +325,6 @@ class ThemeSupport {
 		wp_enqueue_script( 'custom-admin-js' );
 
 	} // end function admin_enqueue_scripts
-	
-	
-	
-	
-	
-	
-	/**
-	 * wp_enqueue_scripts
-	 *
-	 * @version 1.0
-	 * @updated 00.00.00
-	 **/
-	function wp_enqueue_scripts() {
-		
-		wp_enqueue_script( 'childTheme' );
-
-	} // end function wp_enqueue_scripts
 	
 	
 	

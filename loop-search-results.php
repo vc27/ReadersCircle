@@ -35,7 +35,7 @@ echo "<div class=\"results-wrapper results-wrapper-" . $gmw['ID'] . "\">";
 				
 				do_action( 'gmw_posts_loop_post_start' , $gmw, $post );
 				
-				echo "<h2>";
+				echo "<h2 class=\"h2 lrg-txt\">";
 					echo "<a href=\"" . get_permalink() . "\">" . get_the_title() . "</a>";
 					if ( isset( $gmw['your_lat'] ) && !empty( $gmw['your_lat'] ) ) {
 						echo " <span class=\"radius-dis\">("; gmw_pt_by_radius( $gmw, $post ); echo ")</span>";
@@ -43,7 +43,8 @@ echo "<div class=\"results-wrapper results-wrapper-" . $gmw['ID'] . "\">";
 				echo "</h2>";
 				
 				echo "<div class=\"address\">";
-					echo $post->address; 
+					// echo "$post->city, $post->state_long $post->zipcode"; 
+					echo $post->address;
     			echo "</div> ";
 	    			
 				if ( get_field( '_book_club__desc' ) ) {
@@ -53,14 +54,12 @@ echo "<div class=\"results-wrapper results-wrapper-" . $gmw['ID'] . "\">";
 				}
 				
 				echo "<div class=\"email\">";
-					echo "<a href=\"mailto:" . antispambot( get_field('_book_club__email') ) . "\">" . antispambot( get_field('_book_club__email') ) . "</a>";
+					echo "<span class=\"icon-envelope\"></span> <a href=\"mailto:" . antispambot( get_field('_book_club__email') ) . "\">Contact Organizer</a>";
     			echo "</div> ";
 		    	
 				do_action( 'gmw_posts_loop_post_end' , $gmw, $post );
 		    	
 		    echo "</div>";
-		    
-		    echo "<div class=\"clear\"></div>";
 	
 		}
 	
