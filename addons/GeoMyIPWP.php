@@ -56,36 +56,10 @@ class GeoMyIPWP {
 	 * @updated 00.00.00
 	 **/
 	function __construct() {
-
-		// hook method after_setup_theme
-		add_action( 'after_setup_theme', array( &$this, 'after_setup_theme' ) );
-
-		// hook method init
+		
 		add_action( 'init', array( &$this, 'init' ) );
 
-		// hook method admin_init
-		add_action( 'admin_init', array( &$this, 'admin_init' ) );
-
 	} // end function __construct
-	
-	
-	
-	
-	
-	
-	/**
-	 * after_setup_theme
-	 *
-	 * @version 1.0
-	 * @updated 00.00.00
-	 *
-	 * @codex http://codex.wordpress.org/Plugin_API/Action_Reference/after_setup_theme
-	 **/
-	function after_setup_theme() {
-		
-		// 
-		
-	} // end function after_setup_theme
 	
 	
 	
@@ -104,32 +78,9 @@ class GeoMyIPWP {
 	 **/
 	function init() {
 		
-        //
+		add_filter( 'the_post', array( &$this, 'the_post' ) );
 		
 	} // end function init
-	
-	
-	
-	
-	
-	
-	/**
-	 * admin_init
-	 *
-	 * @version 1.0
-	 * @updated 00.00.00
-	 * @codex http://codex.wordpress.org/Plugin_API/Action_Reference/admin_init
-	 * 
-	 * Description:
-	 * admin_init is triggered before any other hook when a user access the admin area.
-	 * This hook doesn't provide any parameters, so it can only be used to callback a 
-	 * specified function.
-	 **/
-	function admin_init() {
-		
-		// 
-		
-	} // end function admin_init
 	
 	
 	
@@ -284,7 +235,34 @@ class GeoMyIPWP {
 			echo apply_filters( 'gmw_form_submit_button', $submit_button, $gmw, $subValue );
 	    echo "</div>";
 
-	} // end function gmw_form_submit_fields
+	} // end function gmw_form_submit_fields 
+	
+	
+	
+	
+	
+	
+	/**
+	 * the_post
+	 *
+	 * @version 1.0
+	 * @updated 00.00.00
+	 **/
+	function the_post( $post ) {
+		
+		if ( isset( $post->post_type ) AND $post->post_type == 'book-club' ) {
+			global $wpdb;
+			$results = $wpdb->get_results( "SELECT * FROM wp_places_locator WHERE post_id = $post->ID LIMIT 1" );
+			
+			if ( isset( $results ) AND is_array( $results ) AND isset( $results[0]->post_id ) ) {
+				$post->location = $results[0];
+			} else {
+				$post->location = false;
+			}
+		}
+		return $post;
+		
+	} // end function the_post
 	
 	
 	

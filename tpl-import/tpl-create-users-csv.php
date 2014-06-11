@@ -107,6 +107,7 @@ class CreatetUsersCSV {
 		'last_name',
 		'display_name',
 		'role',
+		'rc_id',
 		'membership_id',
 		'membership_code_id',
 		'membership_initial_payment',
@@ -323,6 +324,7 @@ class CreatetUsersCSV {
 					$this->errors['users-no-password'] = $this->user;
 					
 				} else {
+					
 					$output = array();
 					foreach ( $this->user_fields as $field ) {
 						switch ( $field ) {
@@ -337,6 +339,9 @@ class CreatetUsersCSV {
 								break;
 							case 'role' :
 								$output[$field] = $this->role;
+								break;
+							case 'rc_id' : 
+								$output[$field] = $this->user->userid;
 								break;
 							case 'membership_id' :
 								$output[$field] = $this->membership_id;

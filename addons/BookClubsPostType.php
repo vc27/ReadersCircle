@@ -398,8 +398,6 @@ class BookClubsPostType {
 		global $post;
 		
 		if ( $post->post_type == $this->registered->_post_type ) {
-			global $wpdb;
-			$post->location = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM " . $wpdb->prefix . "places_locator WHERE post_id = %d", $post->ID ) );
 			
 			switch ( $column ) {
 

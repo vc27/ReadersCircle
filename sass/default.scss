@@ -413,7 +413,7 @@ body.page-template-tpl-search-php {
 /* body.page-template-tpl-search-results-php
 #################################################################################################### */
 
-body.page-template-tpl-search-results-php {
+body.page-template-tpl-search-results-php, body.single-book-club {
 	.results-count { font-weight:800; padding:0 0 ($p*2); color:$color-blue; }
 	#loop-default {
 		.hentry { padding-top:($p*2);}

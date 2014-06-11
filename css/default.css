@@ -1007,29 +1007,29 @@ body.page-template-tpl-search-php #loop-default .hentry:first-child { padding-bo
 /* body.page-template-tpl-search-results-php
 #################################################################################################### */
 /* line 417, ../sass/default.scss */
-body.page-template-tpl-search-results-php .results-count { font-weight: 800; padding: 0 0 20px; color: #183477; }
+body.page-template-tpl-search-results-php .results-count, body.single-book-club .results-count { font-weight: 800; padding: 0 0 20px; color: #183477; }
 /* line 419, ../sass/default.scss */
-body.page-template-tpl-search-results-php #loop-default .hentry { padding-top: 20px; }
+body.page-template-tpl-search-results-php #loop-default .hentry, body.single-book-club #loop-default .hentry { padding-top: 20px; }
 /* line 420, ../sass/default.scss */
-body.page-template-tpl-search-results-php #loop-default .hentry:first-child { padding-top: 0; }
+body.page-template-tpl-search-results-php #loop-default .hentry:first-child, body.single-book-club #loop-default .hentry:first-child { padding-top: 0; }
 /* line 421, ../sass/default.scss */
-body.page-template-tpl-search-results-php #loop-default .lrg-txt { padding-bottom: 0; }
+body.page-template-tpl-search-results-php #loop-default .lrg-txt, body.single-book-club #loop-default .lrg-txt { padding-bottom: 0; }
 /* line 423, ../sass/default.scss */
-body.page-template-tpl-search-results-php #loop-default .lrg-txt a { color: #000; }
+body.page-template-tpl-search-results-php #loop-default .lrg-txt a, body.single-book-club #loop-default .lrg-txt a { color: #000; }
 /* line 424, ../sass/default.scss */
-body.page-template-tpl-search-results-php #loop-default .lrg-txt .radius-dis { font-size: 12px; }
+body.page-template-tpl-search-results-php #loop-default .lrg-txt .radius-dis, body.single-book-club #loop-default .lrg-txt .radius-dis { font-size: 12px; }
 /* line 426, ../sass/default.scss */
-body.page-template-tpl-search-results-php #loop-default .address { font-weight: 800; padding-bottom: 10px; }
+body.page-template-tpl-search-results-php #loop-default .address, body.single-book-club #loop-default .address { font-weight: 800; padding-bottom: 10px; }
 /* line 427, ../sass/default.scss */
-body.page-template-tpl-search-results-php #loop-default .entry p:last-child { padding-bottom: 0; }
+body.page-template-tpl-search-results-php #loop-default .entry p:last-child, body.single-book-club #loop-default .entry p:last-child { padding-bottom: 0; }
 /* line 428, ../sass/default.scss */
-body.page-template-tpl-search-results-php #loop-default .entry { padding-bottom: 10px; }
+body.page-template-tpl-search-results-php #loop-default .entry, body.single-book-club #loop-default .entry { padding-bottom: 10px; }
 /* line 429, ../sass/default.scss */
-body.page-template-tpl-search-results-php #loop-default .email { font-weight: 800; color: #183477; }
+body.page-template-tpl-search-results-php #loop-default .email, body.single-book-club #loop-default .email { font-weight: 800; color: #183477; }
 /* line 431, ../sass/default.scss */
-body.page-template-tpl-search-results-php #loop-default .email .icon-envelope { font-size: 16px; position: relative; top: 2px; }
+body.page-template-tpl-search-results-php #loop-default .email .icon-envelope, body.single-book-club #loop-default .email .icon-envelope { font-size: 16px; position: relative; top: 2px; }
 /* line 432, ../sass/default.scss */
-body.page-template-tpl-search-results-php #loop-default .email a { color: #183477; }
+body.page-template-tpl-search-results-php #loop-default .email a, body.single-book-club #loop-default .email a { color: #183477; }
 
 /* Comments */
 /* 
