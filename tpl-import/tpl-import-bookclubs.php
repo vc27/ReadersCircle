@@ -107,10 +107,14 @@ class ImportBookClubsWP {
 	function __construct() {
 		
 		add_filter( 'import--add-update-delete-post', array( &$this, 'insert_location' ) );
+		add_filter( 'import--add-update-delete-post', array( &$this, 'wp_update_post' ) );
 		
 		$this->set_book_clubs();
 		$this->prep_book_clubs();
-		// $this->import();
+		
+		$CreatePostsVCWP = create__posts( $this->posts, array(
+			'overwrite_posts' => true
+		) );
 		
 		print_r($this); die();
 
@@ -210,7 +214,7 @@ class ImportBookClubsWP {
 		$this->append__post( 'post_content', $this->_post->descr );
 		$this->append__post( 'post_status', 'publish' );
 		$this->append__post( 'post_author', 1 );
-		$this->append__post( 'post_type', 'book' );
+		$this->append__post( 'post_type', 'book-club' );
 		
 	} // end function set__post_array 
 	
@@ -253,29 +257,19 @@ class ImportBookClubsWP {
 				$this->post_meta = null;
 
 				switch ( $meta_key ) {
-					case 'first_name' :
-						$this->append__post_meta( 'key', "_books__first_name" );
+					case 'userid' : 
+						$this->append__post_meta( 'key', "_book_club__rc_id" );
 						break;
-					case 'last_name' : 
-						$this->append__post_meta( 'key', "_books__last_name" );
+					case 'typex' :
+						$meta_value = sanitize_title_with_dashes($meta_value);
+						$this->append__post_meta( 'key', "_book_club__type" );
 						break;
-					case 'author_email' :
-						$this->append__post_meta( 'key', "_books__email" );
+					case 'circleid' : 
+						$meta_value = $this->_post;
+						$this->append__post_meta( 'key', "_book_club__object" );
 						break;
-					case 'book_url' :
-						$this->append__post_meta( 'key', "_books__book_url" );
-						break;
-					case 'author_link' :
-						$this->append__post_meta( 'key', "_books__site_url" );
-						break;
-					case 'book_image' :
-						$this->append__post_meta( 'key', "_books__image_url" );
-						break;
-					case 'featured' :
-						$this->append__post_meta( 'key', "_books__is_featured" );
-						break;
-					case 'order' :
-						$this->append__post_meta( 'key', "_books__featured_order" );
+					case 'descr' :
+						$this->append__post_meta( 'key', "_book_club__desc" );
 						break;
 				}
 				
@@ -408,10 +402,9 @@ class ImportBookClubsWP {
 				$this->set__post_array();
 				$this->append__posts();
 				$this->set__post_meta_array();
-				print_r($this); die('need to finish method set__post_meta_array');
 				$this->append__posts_meta();
 				
-				$this->set__post_terms_array();
+				// $this->set__post_terms_array();
 			}
 		}
 		
@@ -431,34 +424,68 @@ class ImportBookClubsWP {
 	function insert_location( $post_id ) {
 		global $wpdb;
 		
-		$post = get_post('post_id');
+		$_book_club__object = get_post_meta( $post_id, '_book_club__object', true );
+		$post = get_post($post_id);
 		
 		$wpdb->replace( $wpdb->prefix . 'places_locator', array(
 			'post_id'           => $post->ID,
 			'feature'           => 0,
-			'post_type'         => $_POST[ 'post_type' ],
-			'post_title'        => $_POST[ 'post_title' ],
-			'post_status'       => $_POST[ 'post_status' ],
-			'street'			=> $_POST[ '_wppl_street' ],
-			'apt'			    => $_POST[ '_wppl_apt' ],
-			'city'			    => $_POST[ '_wppl_city' ],
-			'state'			    => $_POST[ '_wppl_state' ],
-			'state_long'        => $_POST[ '_wppl_state_long' ],
-			'zipcode'           => $_POST[ '_wppl_zipcode' ],
-			'country'           => $_POST[ '_wppl_country' ],
-			'country_long'      => $_POST[ '_wppl_country_long' ],
-			'address'           => $_POST[ '_wppl_address' ],
-			'formatted_address' => $_POST[ '_wppl_formatted_address' ],
-			'phone'			    => $_POST[ '_wppl_phone' ],
-			'fax'			    => $_POST[ '_wppl_fax' ],
-			'email'			    => $_POST[ '_wppl_email' ],
-			'website'           => $_POST[ '_wppl_website' ],
-			'lat'			    => $_POST[ '_wppl_lat' ],
-			'long'			    => $_POST[ '_wppl_long' ],
-			'map_icon'          => $_POST[ 'gmw_map_icon' ],
+			'post_type'         => 'book-club',
+			'post_title'        => $post->post_title,
+			'post_status'       => $post->post_status,
+			'street'			=> $_book_club__object->addr,
+			'apt'			    => '',
+			'city'			    => $_book_club__object->city,
+			'state'			    => $_book_club__object->state,
+			'state_long'        => $_book_club__object->state,
+			'zipcode'           => $_book_club__object->zip,
+			'country'           => $_book_club__object->country,
+			'country_long'      => $_book_club__object->country,
+			'address'           => "$_book_club__object->city $_book_club__object->state, $_book_club__object->zip $_book_club__object->country",
+			'formatted_address' => "$_book_club__object->city $_book_club__object->state, $_book_club__object->zip $_book_club__object->country",
+			'phone'			    => '',
+			'fax'			    => '',
+			'email'			    => '',
+			'website'           => '',
+			'lat'			    => '',
+			'long'			    => '',
+			'map_icon'          => '_default.png',
 		) );
 		
 	} // end function insert_location
+	
+	
+	
+	
+	
+	
+	/**
+	 * wp_update_post
+	 *
+	 * @version 1.0
+	 * @updated 00.00.00
+	 **/
+	function wp_update_post( $post_id ) {
+		
+		$_book_club__object = get_post_meta( $post_id, '_book_club__object', true );
+		$post = get_post($post_id);
+		
+		$user_query = new WP_User_Query( array( 
+			'meta_key' => 'rc_id', 
+			'meta_value' => $_book_club__object->userid 
+		) );
+		
+		die('need to import all the users to get a proper pool of rc_id for book club import');
+		print_r($user_query);
+		die('wp_update_post');
+		
+		wp_update_post( array(
+			'ID' => $post_id,
+			'post_type' => 'book-clubs',
+			'post_author' => $ssss,
+		) );
+		
+	} // end function wp_update_post
 	
 	
 	
