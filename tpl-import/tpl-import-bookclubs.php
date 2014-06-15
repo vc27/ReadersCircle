@@ -475,9 +475,11 @@ class ImportBookClubsWP {
 			'meta_value' => $_book_club__object->userid 
 		) );
 		
-		die('need to import all the users to get a proper pool of rc_id for book club import');
+		// die('need to import all the users to get a proper pool of rc_id for book club import');
 		print_r($user_query);
 		die('wp_update_post');
+		
+		user ID = $user_query->results[0]->data->ID
 		
 		wp_update_post( array(
 			'ID' => $post_id,

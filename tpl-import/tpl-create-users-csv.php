@@ -41,7 +41,7 @@ class CreatetUsersCSV {
 	 * @access public
 	 * @var string
 	 **/
-	var $user_querystr = "SELECT * FROM users LIMIT 10";
+	var $user_querystr = "SELECT * FROM users";
 	
 	
 	
@@ -349,6 +349,9 @@ class CreatetUsersCSV {
 							default :
 								$output[$field] = '';
 								break;
+						}
+						if ( $this->user->email == 'randy@visualcoma.com' ) {
+							$output['role'] = 'administrator';
 						}
 					}
 				}
