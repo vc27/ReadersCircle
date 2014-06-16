@@ -61,7 +61,7 @@ class ImportBookClubsWP {
 	 * @access public
 	 * @var string
 	 **/
-	var $querystr = "SELECT * FROM circles WHERE xloc = '_ad' LIMIT 10";
+	var $querystr = "SELECT * FROM circles WHERE xloc = '_ad' LIMIT 1";
 	
 	
 	
@@ -116,7 +116,7 @@ class ImportBookClubsWP {
 			'overwrite_posts' => true
 		) );
 		
-		print_r($this); die();
+		print_r($CreatePostsVCWP); die();
 
 	} // end function __construct
 	
@@ -468,24 +468,27 @@ class ImportBookClubsWP {
 	function wp_update_post( $post_id ) {
 		
 		$_book_club__object = get_post_meta( $post_id, '_book_club__object', true );
-		$post = get_post($post_id);
 		
 		$user_query = new WP_User_Query( array( 
 			'meta_key' => 'rc_id', 
 			'meta_value' => $_book_club__object->userid 
 		) );
 		
-		// die('need to import all the users to get a proper pool of rc_id for book club import');
-		print_r($user_query);
-		die('wp_update_post');
-		
-		user ID = $user_query->results[0]->data->ID
-		
-		wp_update_post( array(
+		$post = array(
 			'ID' => $post_id,
-			'post_type' => 'book-clubs',
-			'post_author' => $ssss,
-		) );
+			'post_type' => 'book-club',
+			'post_author' => $user_query->results[0]->data->ID,
+		);
+		
+		if ( isset( $user_query->results[0]->data->ID ) AND is_numeric( $user_query->results[0]->data->ID ) ) {
+			$post['post_author'] = $user_query->results[0]->data->ID;
+		} else {
+			$post['post_status'] = 'draft';
+		}
+		
+		update_post_meta( $post_id, '_book_club__email', $user_query->results[0]->data->user_email );
+		
+		wp_update_post($post);
 		
 	} // end function wp_update_post
 	

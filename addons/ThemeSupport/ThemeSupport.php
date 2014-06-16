@@ -451,6 +451,32 @@ class ThemeSupport {
 	
 	
 	/**
+	 * Geolocation
+	 *
+	 * @version 1.0
+	 * @updated 00.00.13
+	 **/
+	static function Geolocation( $street, $streetNumber, $city, $zip, $country ) {
+		
+		$output = false;
+		if ( ! class_exists('Geolocation') ) {
+			require_once('../Geolocation.php');
+		}
+		
+		if ( class_exists('Geolocation') ) {
+			$output = Geolocation::getCoordinates( $street, $streetNumber, $city, $zip, $country );
+		}
+		
+		return $output;
+		
+	} // end function Geolocation
+	
+	
+	
+	
+	
+	
+	/**
 	 * Test Function
 	 *
 	 * @version 1.0
