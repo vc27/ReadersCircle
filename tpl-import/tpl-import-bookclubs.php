@@ -61,7 +61,7 @@ class ImportBookClubsWP {
 	 * @access public
 	 * @var string
 	 **/
-	var $querystr = "SELECT * FROM circles WHERE xloc = '_ad' LIMIT 1";
+	var $querystr = "SELECT * FROM circles WHERE xloc = '_ad' AND userid >= 0";
 	
 	
 	

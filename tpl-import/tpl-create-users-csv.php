@@ -279,8 +279,7 @@ class CreatetUsersCSV {
 		if ( isset( $this->user->username ) AND ! empty( $this->user->username ) ) {
 			return $this->user->username;
 		} else {
-			$output = explode( '@', $this->user->email );
-			return sanitize_title_with_dashes( $output[0] );
+			return sanitize_title_with_dashes( $this->user->email );
 		}
 		
 	} // end function get_user__user_login

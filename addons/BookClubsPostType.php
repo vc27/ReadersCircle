@@ -247,7 +247,7 @@ class BookClubsPostType {
 				'supports' => array( 
 					'title',
 					// 'editor',
-					// 'author',
+					'author',
 					// 'thumbnail',
 					// 'excerpt',
 					// 'trackbacks',
