@@ -29,6 +29,7 @@ if ( ! defined('THEME_ADDONS_INIT') ) {
 	require_once( "SponsorsPostType.php" );
 	require_once( "ACFOptionsWP.php" );
 	require_once( "Geolocation.php" );
+	require_once( "TribeEventsCalendarWP.php" );
 	
 	define( 'THEME_ADDONS_INIT', true );
 	

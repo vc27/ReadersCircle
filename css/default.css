@@ -904,139 +904,160 @@ a.read_more { text-decoration: underline; font-style: italic; display: block; }
 .entry table th, .entry table td { padding: 5px; vertical-align: top; border-right: solid 1px #fff; }
 /* line 264, ../sass/default.scss */
 .entry table th { background: whitesmoke; }
+/* line 266, ../sass/default.scss */
+.entry .lrg-txt, .entry .h1, .entry h1, .entry .h2, .entry h2, .entry .h3, .entry h3, .entry .h4, .entry h4, .entry .h5, .entry h5, .entry .h6, .entry h6 { padding-bottom: 5px; padding-top: 5px; }
 
 /*end .entry */
-/* line 268, ../sass/default.scss */
+/* line 272, ../sass/default.scss */
 .excerpt p { padding-bottom: 20px; }
 
 /* Gallery Shortcode */
-/* line 274, ../sass/default.scss */
+/* line 278, ../sass/default.scss */
 .gallery dl.gallery-item { display: block; float: left; }
 
-/* line 281, ../sass/default.scss */
+/* line 285, ../sass/default.scss */
 .wp-caption { max-width: 96%; display: block; text-align: center !important; padding: 5px; background: #eee; }
-/* line 283, ../sass/default.scss */
+/* line 287, ../sass/default.scss */
 .wp-caption p { font-size: 11px; line-height: 14px; padding: 5px 0 7px; }
-/* line 284, ../sass/default.scss */
+/* line 288, ../sass/default.scss */
 .wp-caption img { display: inline; }
 
 /* All sitemap style layouts - search, 404, sitemap */
-/* line 291, ../sass/default.scss */
-.layout-sitemap .display-list { margin: 0 2% 20px 0; width: 48%; float: left; }
-/* line 294, ../sass/default.scss */
-.layout-sitemap .display-list ul { margin: 10px 0 0 0; }
 /* line 295, ../sass/default.scss */
-.layout-sitemap .display-list ul ul { margin: 0 0 7px 15px; list-style: disc; }
-/* line 296, ../sass/default.scss */
-.layout-sitemap .display-list ul ul.children { padding: 0; margin-left: 15px; list-style: disc; }
+.layout-sitemap .display-list { margin: 0 2% 20px 0; width: 48%; float: left; }
 /* line 298, ../sass/default.scss */
+.layout-sitemap .display-list ul { margin: 10px 0 0 0; }
+/* line 299, ../sass/default.scss */
+.layout-sitemap .display-list ul ul { margin: 0 0 7px 15px; list-style: disc; }
+/* line 300, ../sass/default.scss */
+.layout-sitemap .display-list ul ul.children { padding: 0; margin-left: 15px; list-style: disc; }
+/* line 302, ../sass/default.scss */
 .layout-sitemap .display-list .site-search { display: block; padding-bottom: 10px; }
 
 /* Widget Areas
 #################################################################################################### */
-/* line 310, ../sass/default.scss */
-.sidebar ul li { margin-bottom: 10px; }
-/* line 311, ../sass/default.scss */
-.sidebar ul li li { margin: 0; }
+/* line 312, ../sass/default.scss */
+.sidebar { margin-bottom: 20px; }
+/* line 315, ../sass/default.scss */
+.sidebar li { margin-bottom: 10px; }
+/* line 316, ../sass/default.scss */
+.sidebar li li { margin: 0; }
 
 /*Books*/
-/* line 321, ../sass/default.scss */
+/* line 326, ../sass/default.scss */
 .hentry-book { float: left; line-height: 16px; height: 245px; overflow: hidden; text-align: center; }
-/* line 323, ../sass/default.scss */
+/* line 328, ../sass/default.scss */
 .hentry-book img { width: 128px; height: 195px; display: block; margin: 0 auto; }
-/* line 324, ../sass/default.scss */
+/* line 329, ../sass/default.scss */
 .hentry-book a { display: block; }
-/* line 325, ../sass/default.scss */
+/* line 330, ../sass/default.scss */
 .hentry-book .post-wrap { padding: 5px; }
 
 /* Blocks
 #################################################################################################### */
-/* line 335, ../sass/default.scss */
+/* line 340, ../sass/default.scss */
 #header { padding-bottom: 10px; }
-/* line 337, ../sass/default.scss */
+/* line 342, ../sass/default.scss */
 #header .logo-text-full { max-width: 240px; height: auto; padding: 10px 20px 0; }
-/* line 338, ../sass/default.scss */
-#header .img-header { max-width: 100%; height: auto; padding: 2.5px 0 0; }
-/* line 339, ../sass/default.scss */
-#header strong { color: #183477; }
-/* line 341, ../sass/default.scss */
-#header .top-right { float: right; padding: 10px; }
 /* line 343, ../sass/default.scss */
-#header .top-right a, #header .top-right .meta-data { display: inline-block; margin: 0 2.5px; vertical-align: middle; }
+#header .img-header { max-width: 100%; height: auto; padding: 2.5px 0 0; }
 /* line 344, ../sass/default.scss */
+#header strong { color: #183477; }
+/* line 346, ../sass/default.scss */
+#header .top-right { float: right; padding: 10px; }
+/* line 348, ../sass/default.scss */
+#header .top-right a, #header .top-right .meta-data { display: inline-block; margin: 0 2.5px; vertical-align: middle; }
+/* line 349, ../sass/default.scss */
 #header .top-right a.ic { font-size: 30px; color: #dddddd; }
 
-/* line 348, ../sass/default.scss */
-#footer .inner-wrap { text-align: center; padding: 40px 0 20px; }
+/* line 353, ../sass/default.scss */
+#footer .inner-wrap { text-align: center; padding: 40px 0 20px; color: #5a5a5a; }
 
-/* line 352, ../sass/default.scss */
+/* line 358, ../sass/default.scss */
 #loop-books { text-align: center; }
-/* line 354, ../sass/default.scss */
+/* line 360, ../sass/default.scss */
 #loop-books .hentry-book { width: 50%; }
-/* line 355, ../sass/default.scss */
+/* line 361, ../sass/default.scss */
 #loop-books .link { height: auto; }
 
-/* line 357, ../sass/default.scss */
+/* line 363, ../sass/default.scss */
 #loop-sponsors { text-align: center; }
-/* line 359, ../sass/default.scss */
+/* line 365, ../sass/default.scss */
 #loop-sponsors .hentry { padding-top: 10px; }
+/* line 367, ../sass/default.scss */
+#loop-sponsors .hentry img { border: solid 1px #dddddd; }
+
+/* line 370, ../sass/default.scss */
+#loop-event-dates { text-align: center; }
+/* line 372, ../sass/default.scss */
+#loop-event-dates .head { padding-bottom: 20px; }
+/* line 374, ../sass/default.scss */
+#loop-event-dates .head p { padding-bottom: 0; }
+/* line 376, ../sass/default.scss */
+#loop-event-dates .hentry { text-align: left; }
+/* line 378, ../sass/default.scss */
+#loop-event-dates .hentry a { display: block; color: #000; padding: 10px; border-top: solid 1px #dddddd; }
+/* line 379, ../sass/default.scss */
+#loop-event-dates .hentry a:hover { background: whitesmoke; }
 
 /* tax-books, page-template-taxonomy-books-php
 #################################################################################################### */
-/* line 371, ../sass/default.scss */
+/* line 392, ../sass/default.scss */
 body.author-book-directory #loop-default { padding-bottom: 0; }
-/* line 372, ../sass/default.scss */
+/* line 393, ../sass/default.scss */
 body.author-book-directory #links-author-books-directory { font-size: 16px; padding-bottom: 20px; }
-/* line 374, ../sass/default.scss */
+/* line 395, ../sass/default.scss */
 body.author-book-directory #links-author-books-directory li { display: inline-block; padding: 0 5px; }
-/* line 377, ../sass/default.scss */
+/* line 398, ../sass/default.scss */
 body.author-book-directory #loop-archive-author-books .hentry-book { width: 160px; }
 
 /* body.tax-resources
 #################################################################################################### */
-/* line 390, ../sass/default.scss */
+/* line 411, ../sass/default.scss */
 body.tax-resources #list-resources { padding-top: 10px; }
-/* line 392, ../sass/default.scss */
+/* line 413, ../sass/default.scss */
 body.tax-resources #list-resources ul { padding-bottom: 20px; }
 
 /* body.page-template-tpl-search-php
 #################################################################################################### */
-/* line 405, ../sass/default.scss */
+/* line 426, ../sass/default.scss */
 body.page-template-tpl-search-php #loop-default .hentry:first-child { padding-bottom: 0; }
 
 /* body.page-template-tpl-search-results-php
 #################################################################################################### */
-/* line 419, ../sass/default.scss */
-body.page-template-tpl-search-results-php #loop-default .hentry, body.single-book-club #loop-default .hentry { padding-top: 20px; }
-/* line 420, ../sass/default.scss */
-body.page-template-tpl-search-results-php #loop-default .hentry:first-child, body.single-book-club #loop-default .hentry:first-child { padding-top: 0; }
-/* line 421, ../sass/default.scss */
-body.page-template-tpl-search-results-php #loop-default .lrg-txt, body.single-book-club #loop-default .lrg-txt { padding-bottom: 0; }
-/* line 423, ../sass/default.scss */
-body.page-template-tpl-search-results-php #loop-default .lrg-txt a, body.single-book-club #loop-default .lrg-txt a { color: #000; }
-/* line 424, ../sass/default.scss */
-body.page-template-tpl-search-results-php #loop-default .lrg-txt .radius-dis, body.single-book-club #loop-default .lrg-txt .radius-dis { font-size: 12px; }
-/* line 426, ../sass/default.scss */
-body.page-template-tpl-search-results-php #loop-default .address, body.single-book-club #loop-default .address { font-weight: 800; padding-bottom: 10px; }
-/* line 427, ../sass/default.scss */
-body.page-template-tpl-search-results-php #loop-default .entry p:last-child, body.single-book-club #loop-default .entry p:last-child { padding-bottom: 0; }
-/* line 428, ../sass/default.scss */
-body.page-template-tpl-search-results-php #loop-default .entry, body.single-book-club #loop-default .entry { padding-bottom: 10px; }
-/* line 430, ../sass/default.scss */
-body.page-template-tpl-search-results-php #loop-default .entry .results-count, body.single-book-club #loop-default .entry .results-count { font-weight: 800; padding-top: 10px; color: #183477; }
-/* line 431, ../sass/default.scss */
-body.page-template-tpl-search-results-php #loop-default .entry .pagination-wrapper-bottom, body.single-book-club #loop-default .entry .pagination-wrapper-bottom { padding-top: 20px; }
-/* line 433, ../sass/default.scss */
-body.page-template-tpl-search-results-php #loop-default .entry .pagination-wrapper ul, body.single-book-club #loop-default .entry .pagination-wrapper ul { list-style: none; margin-left: 0; margin-top: 0; }
-/* line 435, ../sass/default.scss */
-body.page-template-tpl-search-results-php #loop-default .entry .pagination-wrapper ul li, body.single-book-club #loop-default .entry .pagination-wrapper ul li { display: inline-block; padding: 0 10px; }
-/* line 436, ../sass/default.scss */
-body.page-template-tpl-search-results-php #loop-default .entry .pagination-wrapper ul li:first-child, body.single-book-club #loop-default .entry .pagination-wrapper ul li:first-child { padding-left: 0; }
 /* line 440, ../sass/default.scss */
-body.page-template-tpl-search-results-php #loop-default .email, body.single-book-club #loop-default .email { font-weight: 800; color: #183477; }
+body.page-template-tpl-search-results-php #loop-default .hentry, body.single-book-club #loop-default .hentry { padding-top: 20px; }
+/* line 441, ../sass/default.scss */
+body.page-template-tpl-search-results-php #loop-default .hentry:first-child, body.single-book-club #loop-default .hentry:first-child { padding-top: 0; }
 /* line 442, ../sass/default.scss */
+body.page-template-tpl-search-results-php #loop-default .lrg-txt, body.single-book-club #loop-default .lrg-txt { padding-bottom: 0; }
+/* line 444, ../sass/default.scss */
+body.page-template-tpl-search-results-php #loop-default .lrg-txt a, body.single-book-club #loop-default .lrg-txt a { color: #000; }
+/* line 445, ../sass/default.scss */
+body.page-template-tpl-search-results-php #loop-default .lrg-txt .radius-dis, body.single-book-club #loop-default .lrg-txt .radius-dis { font-size: 12px; }
+/* line 447, ../sass/default.scss */
+body.page-template-tpl-search-results-php #loop-default .address, body.single-book-club #loop-default .address { font-weight: 800; padding-bottom: 10px; }
+/* line 448, ../sass/default.scss */
+body.page-template-tpl-search-results-php #loop-default .entry p:last-child, body.single-book-club #loop-default .entry p:last-child { padding-bottom: 0; }
+/* line 449, ../sass/default.scss */
+body.page-template-tpl-search-results-php #loop-default .entry, body.single-book-club #loop-default .entry { padding-bottom: 10px; }
+/* line 451, ../sass/default.scss */
+body.page-template-tpl-search-results-php #loop-default .entry .results-count, body.single-book-club #loop-default .entry .results-count { font-weight: 800; padding-top: 10px; color: #183477; }
+/* line 452, ../sass/default.scss */
+body.page-template-tpl-search-results-php #loop-default .entry .pagination-wrapper-top, body.single-book-club #loop-default .entry .pagination-wrapper-top { display: none; }
+/* line 453, ../sass/default.scss */
+body.page-template-tpl-search-results-php #loop-default .entry .pagination-wrapper-bottom, body.single-book-club #loop-default .entry .pagination-wrapper-bottom { padding-top: 20px; }
+/* line 455, ../sass/default.scss */
+body.page-template-tpl-search-results-php #loop-default .entry .pagination-wrapper ul, body.single-book-club #loop-default .entry .pagination-wrapper ul { list-style: none; margin-left: 0; margin-top: 0; }
+/* line 457, ../sass/default.scss */
+body.page-template-tpl-search-results-php #loop-default .entry .pagination-wrapper ul li, body.single-book-club #loop-default .entry .pagination-wrapper ul li { display: inline-block; padding: 0 10px; }
+/* line 458, ../sass/default.scss */
+body.page-template-tpl-search-results-php #loop-default .entry .pagination-wrapper ul li:first-child, body.single-book-club #loop-default .entry .pagination-wrapper ul li:first-child { padding-left: 0; }
+/* line 462, ../sass/default.scss */
+body.page-template-tpl-search-results-php #loop-default .email, body.single-book-club #loop-default .email { font-weight: 800; color: #183477; }
+/* line 464, ../sass/default.scss */
 body.page-template-tpl-search-results-php #loop-default .email .icon-envelope, body.single-book-club #loop-default .email .icon-envelope { font-size: 16px; position: relative; top: 2px; }
-/* line 443, ../sass/default.scss */
+/* line 465, ../sass/default.scss */
 body.page-template-tpl-search-results-php #loop-default .email a, body.single-book-club #loop-default .email a { color: #183477; }
 
 /* Comments */

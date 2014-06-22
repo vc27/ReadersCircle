@@ -19,7 +19,7 @@ $wp_query->query( $query );
 
 if ( have_posts() ) {
 	
-	echo "<div id=\"loop-sponsors\">";
+	echo "<div id=\"loop-sponsors\" class=\"sidebar\">";
 		echo "<div class=\"head entry\">";
 			echo "<div class=\"h3\">" . get_field('_col_sponsors_title','option') . "</div>";
 			echo get_field('_col_sponsors_content','option');

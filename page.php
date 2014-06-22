@@ -20,7 +20,10 @@ get_template_part( 'header' );
 		<?php get_template_part( 'loop-books' ); ?>
 	</div>
 	<div class="span4">
-		<?php get_template_part( 'loop-sponsors' ); ?>
+		<?php
+		get_template_part( 'loop-event-dates' );
+		get_template_part( 'loop-sponsors' ); 
+		?>
 	</div>
 </div>
 <?php
