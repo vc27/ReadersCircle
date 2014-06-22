@@ -10,6 +10,7 @@
  **/
 ####################################################################################################
 
+die('UpdateBookClubLatLon deactivated')
 
 
 
@@ -57,12 +58,14 @@ class UpdateBookClubLatLon {
 	function __construct() {
 		global $wpdb, $wp_query, $post;
 		
-		$results = $wpdb->get_results("SELECT post_id FROM wp_places_locator WHERE lat < 1 ");
+		
+		$results = $wpdb->get_results("SELECT `post_id` FROM `wp_places_locator` WHERE `lat` < 1 ");
 		$post__in = array();
 		
 		foreach ( $results as $p ) {
 			$post__in[] = $p->post_id;
 		}
+		
 		
 		$query = array(
 			'post_type' => 'book-club',
@@ -78,13 +81,12 @@ class UpdateBookClubLatLon {
 				the_post();
 				$i++;
 				
-				$_book_club__object = get_post_meta( $post->ID, '_book_club__object', true );
-				/**
-				Book club id needs to be added to the book club post on import.
-				**/
-				die('_book_club__object is returning serialized which makes me think it may be bad data. Might need to go back to the db and get the original row.');
+				$_book_club__circle_id = get_post_meta( $post->ID, '_book_club__circle_id', true );
+				$results = $wpdb->get_results("SELECT * FROM `circles` WHERE `circleid` = $_book_club__circle_id");
+				$_book_club__object = $results[0];
+				
 				$results = Geolocation::getCoordinates( '', '', '', $_book_club__object->zip, $_book_club__object->country );
-
+				
 				if ( isset( $results['latitude'] ) AND ! empty( $results['latitude'] ) AND isset( $results['longitude'] ) AND ! empty( $results['longitude'] ) ) {
 					$wpdb->replace( $wpdb->prefix . 'places_locator', array(
 						'post_id' => $post->ID,
@@ -115,7 +117,7 @@ class UpdateBookClubLatLon {
 		}
 		
 		
-		echo "$i of $count";
+		echo "$i of " . count($post__in);
 		die();
 		
 	} // end function __construct

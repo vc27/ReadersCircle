@@ -414,7 +414,7 @@ body.page-template-tpl-search-php {
 #################################################################################################### */
 
 body.page-template-tpl-search-results-php, body.single-book-club {
-	.results-count { font-weight:800; padding:0 0 ($p*2); color:$color-blue; }
+	
 	#loop-default {
 		.hentry { padding-top:($p*2);}
 		.hentry:first-child { padding-top:0;}
@@ -425,7 +425,18 @@ body.page-template-tpl-search-results-php, body.single-book-club {
 		}
 		.address { font-weight:800; padding-bottom:$p; }
 		.entry p:last-child { padding-bottom:0; }
-		.entry { padding-bottom:$p; }
+		.entry { 
+			padding-bottom:$p; 
+			.results-count { font-weight:800; padding-top:$p; color:$color-blue; }
+			.pagination-wrapper-bottom { padding-top:($p*2); }
+			.pagination-wrapper {
+				ul {
+					list-style:none; margin-left:0; margin-top:0;
+					li { display:inline-block; padding:0 $p; }
+					li:first-child { padding-left:0; }
+				}
+			}
+		}
 		.email { 
 			font-weight:800; color:$color-blue;
 			.icon-envelope { font-size:16px; position:relative; top:2px; }

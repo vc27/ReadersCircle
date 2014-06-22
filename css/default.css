@@ -1006,8 +1006,6 @@ body.page-template-tpl-search-php #loop-default .hentry:first-child { padding-bo
 
 /* body.page-template-tpl-search-results-php
 #################################################################################################### */
-/* line 417, ../sass/default.scss */
-body.page-template-tpl-search-results-php .results-count, body.single-book-club .results-count { font-weight: 800; padding: 0 0 20px; color: #183477; }
 /* line 419, ../sass/default.scss */
 body.page-template-tpl-search-results-php #loop-default .hentry, body.single-book-club #loop-default .hentry { padding-top: 20px; }
 /* line 420, ../sass/default.scss */
@@ -1024,11 +1022,21 @@ body.page-template-tpl-search-results-php #loop-default .address, body.single-bo
 body.page-template-tpl-search-results-php #loop-default .entry p:last-child, body.single-book-club #loop-default .entry p:last-child { padding-bottom: 0; }
 /* line 428, ../sass/default.scss */
 body.page-template-tpl-search-results-php #loop-default .entry, body.single-book-club #loop-default .entry { padding-bottom: 10px; }
-/* line 429, ../sass/default.scss */
-body.page-template-tpl-search-results-php #loop-default .email, body.single-book-club #loop-default .email { font-weight: 800; color: #183477; }
+/* line 430, ../sass/default.scss */
+body.page-template-tpl-search-results-php #loop-default .entry .results-count, body.single-book-club #loop-default .entry .results-count { font-weight: 800; padding-top: 10px; color: #183477; }
 /* line 431, ../sass/default.scss */
+body.page-template-tpl-search-results-php #loop-default .entry .pagination-wrapper-bottom, body.single-book-club #loop-default .entry .pagination-wrapper-bottom { padding-top: 20px; }
+/* line 433, ../sass/default.scss */
+body.page-template-tpl-search-results-php #loop-default .entry .pagination-wrapper ul, body.single-book-club #loop-default .entry .pagination-wrapper ul { list-style: none; margin-left: 0; margin-top: 0; }
+/* line 435, ../sass/default.scss */
+body.page-template-tpl-search-results-php #loop-default .entry .pagination-wrapper ul li, body.single-book-club #loop-default .entry .pagination-wrapper ul li { display: inline-block; padding: 0 10px; }
+/* line 436, ../sass/default.scss */
+body.page-template-tpl-search-results-php #loop-default .entry .pagination-wrapper ul li:first-child, body.single-book-club #loop-default .entry .pagination-wrapper ul li:first-child { padding-left: 0; }
+/* line 440, ../sass/default.scss */
+body.page-template-tpl-search-results-php #loop-default .email, body.single-book-club #loop-default .email { font-weight: 800; color: #183477; }
+/* line 442, ../sass/default.scss */
 body.page-template-tpl-search-results-php #loop-default .email .icon-envelope, body.single-book-club #loop-default .email .icon-envelope { font-size: 16px; position: relative; top: 2px; }
-/* line 432, ../sass/default.scss */
+/* line 443, ../sass/default.scss */
 body.page-template-tpl-search-results-php #loop-default .email a, body.single-book-club #loop-default .email a { color: #183477; }
 
 /* Comments */

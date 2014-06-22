@@ -265,8 +265,7 @@ class ImportBookClubsWP {
 						$this->append__post_meta( 'key', "_book_club__type" );
 						break;
 					case 'circleid' : 
-						$meta_value = $this->_post;
-						$this->append__post_meta( 'key', "_book_club__object" );
+						$this->append__post_meta( 'key', "_book_club__circle_id" );
 						break;
 					case 'descr' :
 						$this->append__post_meta( 'key', "_book_club__desc" );
