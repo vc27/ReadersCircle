@@ -423,11 +423,18 @@ class ImportBookClubsWP {
 	function insert_location( $post_id ) {
 		global $wpdb;
 		
-		$_book_club__object = get_post_meta( $post_id, '_book_club__object', true );
-		$post = get_post($post_id);
+		$_book_club__circle_id = get_post_meta( $post->ID, '_book_club__circle_id', true );
+		$results = $wpdb->get_results("SELECT * FROM `circles` WHERE `circleid` = $_book_club__circle_id");
+		$_book_club__object = $results[0];
+		
+		$results = Geolocation::getCoordinates( '', '', '', $_book_club__object->zip, $_book_club__object->country );
+		
+		// if ( isset( $results['latitude'] ) AND ! empty( $results['latitude'] ) AND isset( $results['longitude'] ) AND ! empty( $results['longitude'] ) ) {}
 		
 		$wpdb->replace( $wpdb->prefix . 'places_locator', array(
-			'post_id'           => $post->ID,
+			'post_id' => $post->ID,
+			'lat' => $results['latitude'],
+			'long' => $results['longitude'],
 			'feature'           => 0,
 			'post_type'         => 'book-club',
 			'post_title'        => $post->post_title,
@@ -446,8 +453,6 @@ class ImportBookClubsWP {
 			'fax'			    => '',
 			'email'			    => '',
 			'website'           => '',
-			'lat'			    => '',
-			'long'			    => '',
 			'map_icon'          => '_default.png',
 		) );
 		

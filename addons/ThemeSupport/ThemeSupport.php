@@ -342,6 +342,7 @@ class ThemeSupport {
 		remove_meta_box( 'dashboard_activity', 'dashboard', 'normal' );
 		remove_meta_box( 'dashboard_primary', 'dashboard', 'side' );
 		remove_meta_box( 'pmpro_db_widget', 'dashboard', 'normal' );
+		remove_meta_box( 'tribe_dashboard_widget', 'dashboard', 'normal' );
 	
 	} // end function remove_dashboard_widget
 	

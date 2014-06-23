@@ -276,8 +276,8 @@ class CreatetUsersCSV {
 	 **/
 	function get_user__user_login() {
 		
-		if ( isset( $this->user->username ) AND ! empty( $this->user->username ) ) {
-			return $this->user->username;
+		if ( is_email($this->user->email) ) {
+			return $this->user->email;
 		} else {
 			return sanitize_title_with_dashes( $this->user->email );
 		}
@@ -350,6 +350,7 @@ class CreatetUsersCSV {
 								break;
 						}
 						if ( $this->user->email == 'randy@visualcoma.com' ) {
+							$output['user_login'] = 'randy';
 							$output['role'] = 'administrator';
 						}
 					}

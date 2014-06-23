@@ -177,7 +177,7 @@ input.gmw-submit,
 	text-align:right;
 	li { display:inline-block; }
 	a { 
-		font-family:$font-custom; text-transform:uppercase; color:#000; line-height:14px;
+		font-size:11px; letter-spacing:2px; color:$color-red; font-family:$font-custom; text-transform:uppercase; line-height:14px;
 		display:inline-block; padding:0 0 0 ($p); margin:0 ($p) 0 0; 
 		border-left:solid 1px #000;
 	}

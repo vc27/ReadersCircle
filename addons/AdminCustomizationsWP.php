@@ -69,7 +69,7 @@ class AdminCustomizationsWP {
 		if ( is_admin() ) {
 			add_action( 'admin_init', array( &$this, 'admin_init' ) );
 			add_action( 'admin_menu', array( &$this, 'remove_mene_page' ), 99 );
-			add_action( 'admin_menu', array( &$this, 'remove_submenus' ), 199 );
+			// add_action( 'admin_menu', array( &$this, 'remove_submenus' ), 199 );
 		}
 		
 		// 
@@ -230,12 +230,8 @@ class AdminCustomizationsWP {
 	 **/
     function remove_mene_page() {
 		
-		remove_menu_page( 'link-manager.php' );
-		
-		// Advanced Custom Fields
-		if ( current_user_can( $this->role__restrict_management ) ) {
-			remove_menu_page( 'edit.php?post_type=acf' );
-			remove_menu_page( 'google_universal_analytics' );
+		if ( current_user_can( 'book-club-author' ) ) {
+			remove_menu_page( 'edit.php?post_type=tribe_events' );
 		}
         
     } // end function remove_mene_page
