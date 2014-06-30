@@ -1060,6 +1060,16 @@ body.page-template-tpl-search-results-php #loop-default .email .icon-envelope, b
 /* line 465, ../sass/default.scss */
 body.page-template-tpl-search-results-php #loop-default .email a, body.single-book-club #loop-default .email a { color: #183477; }
 
+/* pmpro
+#################################################################################################### */
+/* line 478, ../sass/default.scss */
+body.pmpro-levels #pmpro_levels_table { width: 100%; margin: 0 0 10px; }
+
+/* line 484, ../sass/default.scss */
+body.pmpro-checkout #pmpro_level_cost { display: none; }
+/* line 485, ../sass/default.scss */
+body.pmpro-checkout .pmpro_thead-msg { display: none; }
+
 /* Comments */
 /* 
 File Name comments.css

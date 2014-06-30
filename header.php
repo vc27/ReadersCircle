@@ -24,7 +24,7 @@ get_template_part( 'header-head' );
 				<div class="top-right">
 					<?php if ( get_vc_option( 'social_networks', 'facebook' ) ) { ?><a class="ic icon-facebook" target="_blank" href="<?php echo get_vc_option( 'social_networks', 'facebook' ); ?>"></a><?php } ?>
 					<?php if ( get_vc_option( 'social_networks', 'twitter' ) ) { ?><a class="ic icon-twitter" target="_blank" href="<?php echo get_vc_option( 'social_networks', 'twitter' ); ?>"></a><?php } ?>
-					<a href="#donate" class="btn btn-orange">Donate</a>
+					<a target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=6UU6FRT69WCRC" class="btn btn-orange">Donate</a>
 					<span class="meta-data">Yes, we are a 501(c)(3)<br />non-profit organization!</span>
 				</div>
 				

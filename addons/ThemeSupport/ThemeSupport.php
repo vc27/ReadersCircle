@@ -147,7 +147,7 @@ class ThemeSupport {
 	function wp() {
 		
 		add_filter( 'the_post', array( &$this, 'the_post' ) );
-		add_action( 'wp_enqueue_scripts', array( &$this, 'wp_enqueue_scripts' ) );
+		// add_action( 'wp_enqueue_scripts', array( &$this, 'wp_enqueue_scripts' ) );
 		
 	} // end function wp
 	
