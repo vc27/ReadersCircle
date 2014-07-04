@@ -4,3 +4,10 @@ Name: ReadersCircle
 /*Hide Admin*/
 /* line 6, ../sass/style-admin.scss */
 #metabox-tabs .days-hours-tab, #screen-meta-links, #wp-admin-bar-comments, #wp-admin-bar-new-post, #wp-admin-bar-wp-logo, #setting-error-tgmpa { /*display:none;*/ }
+
+/* line 15, ../sass/style-admin.scss */
+body.is-book-club-author #wpadminbar #wp-admin-bar-comments, body.is-book-club-author #wpadminbar #wp-admin-bar-wp-logo, body.is-book-club-author #wpadminbar #wp-admin-bar-new-post, body.is-book-club-author #wpadminbar #wp-admin-bar-new-book, body.is-book-club-author #wpadminbar #wp-admin-bar-new-resource, body.is-book-club-author #wpadminbar #wp-admin-bar-new-sponsors, body.is-book-club-author #wpadminbar #wp-admin-bar-tribe-events { display: none; }
+/* line 23, ../sass/style-admin.scss */
+body.is-book-club-author #contextual-help-link-wrap { display: none; }
+/* line 26, ../sass/style-admin.scss */
+body.is-book-club-author #wpbody-content .subsubsub .count { display: none; }

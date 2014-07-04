@@ -30,6 +30,8 @@ if ( ! defined('THEME_ADDONS_INIT') ) {
 	require_once( "ACFOptionsWP.php" );
 	require_once( "Geolocation.php" );
 	require_once( "TribeEventsCalendarWP.php" );
+	require_once( "WPSEOEdits.php" );
+	require_once( "PMProWP.php" );
 	
 	define( 'THEME_ADDONS_INIT', true );
 	

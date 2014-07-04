@@ -9,3 +9,21 @@ Name: ReadersCircle
 #wp-admin-bar-new-post,
 #wp-admin-bar-wp-logo,
 #setting-error-tgmpa { /*display:none;*/ }
+
+body.is-book-club-author {
+	#wpadminbar {
+		#wp-admin-bar-comments,
+		#wp-admin-bar-wp-logo,
+		#wp-admin-bar-new-post,
+		#wp-admin-bar-new-book,
+		#wp-admin-bar-new-resource,
+		#wp-admin-bar-new-sponsors,
+		#wp-admin-bar-tribe-events { display:none; }
+	}
+	#contextual-help-link-wrap { display:none; }
+	#wpbody-content {
+		.subsubsub {
+			.count { display:none; }
+		}
+	}
+}

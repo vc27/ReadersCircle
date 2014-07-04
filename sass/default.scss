@@ -474,6 +474,13 @@ body.page-template-tpl-search-results-php, body.single-book-club {
 
 /* pmpro
 #################################################################################################### */
+body.is-book-club-author {
+	#wpadminbar {
+		#wp-admin-bar-wp-logo,
+		#wp-admin-bar-site-name,
+		#wp-admin-bar-tribe-events { display:none; }
+	}
+}
 body.pmpro-levels {
 	#pmpro_levels_table {
 		width:100%; margin:0 0 $p;
@@ -483,6 +490,10 @@ body.pmpro-levels {
 body.pmpro-checkout {
 	#pmpro_level_cost { display:none; }
 	.pmpro_thead-msg { display:none; }
+}
+
+body.pmpro-account {
+	#pmpro_account-invoices { display:none; }
 }
 
 

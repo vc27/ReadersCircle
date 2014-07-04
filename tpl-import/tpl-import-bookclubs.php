@@ -211,7 +211,7 @@ class ImportBookClubsWP {
 		$this->post = array();
 		
 		$this->append__post( 'post_title', $this->_post->focus );
-		$this->append__post( 'post_content', $this->_post->descr );
+		$this->append__post( 'post_content', html_entity_decode( $this->_post->descr ) );
 		$this->append__post( 'post_status', 'publish' );
 		$this->append__post( 'post_author', 1 );
 		$this->append__post( 'post_type', 'book-club' );
@@ -268,6 +268,7 @@ class ImportBookClubsWP {
 						$this->append__post_meta( 'key', "_book_club__circle_id" );
 						break;
 					case 'descr' :
+						$meta_value = html_entity_decode($meta_value);
 						$this->append__post_meta( 'key', "_book_club__desc" );
 						break;
 				}

@@ -1062,13 +1062,19 @@ body.page-template-tpl-search-results-php #loop-default .email a, body.single-bo
 
 /* pmpro
 #################################################################################################### */
-/* line 478, ../sass/default.scss */
+/* line 479, ../sass/default.scss */
+body.is-book-club-author #wpadminbar #wp-admin-bar-wp-logo, body.is-book-club-author #wpadminbar #wp-admin-bar-site-name, body.is-book-club-author #wpadminbar #wp-admin-bar-tribe-events { display: none; }
+
+/* line 485, ../sass/default.scss */
 body.pmpro-levels #pmpro_levels_table { width: 100%; margin: 0 0 10px; }
 
-/* line 484, ../sass/default.scss */
+/* line 491, ../sass/default.scss */
 body.pmpro-checkout #pmpro_level_cost { display: none; }
-/* line 485, ../sass/default.scss */
+/* line 492, ../sass/default.scss */
 body.pmpro-checkout .pmpro_thead-msg { display: none; }
+
+/* line 496, ../sass/default.scss */
+body.pmpro-account #pmpro_account-invoices { display: none; }
 
 /* Comments */
 /* 

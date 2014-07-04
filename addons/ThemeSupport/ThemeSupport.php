@@ -320,6 +320,9 @@ class ThemeSupport {
 	 * @updated 00.00.00
 	 **/
 	function admin_enqueue_scripts() {
+		global $userdata;
+		
+		wp_localize_script( 'custom-admin-js', 'customAdminObj', (array)$userdata->data );
 		
 		wp_enqueue_style( 'style-admin' );
 		wp_enqueue_script( 'custom-admin-js' );
