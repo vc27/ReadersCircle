@@ -249,7 +249,7 @@ class BookPostType {
 					'title',
 					// 'editor',
 					// 'author',
-					// 'thumbnail',
+					'thumbnail',
 					// 'excerpt',
 					// 'trackbacks',
 					// 'custom-fields',

@@ -144,6 +144,9 @@ input[type="submit"],input[type="button"] {
 	cursor:pointer; display:inline-block; padding:($p/2) ($p);
 	background:$color-gray-light; border:none; font-size:$font-paragraph-size; font-family:$font-paragraph;
 }
+input[type="submit"],input[type="button"],button {
+	@include border-radius(4px); display:inline-block; width:auto; padding-right:($p*2); padding-left:($p*2);
+}
 .btn-orange {
 	font-weight:800; font-style:italic; color:$color-blue; padding:($p/4) ($p*1.5);
 	background:$color-yellow; border:solid 1px $color-orange; @include border-radius(1000px);

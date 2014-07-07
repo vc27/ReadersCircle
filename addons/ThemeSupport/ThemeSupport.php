@@ -431,8 +431,11 @@ class ThemeSupport {
 	 **/
 	static function single_book_display() {
 		
-		if ( $image = get_field('_books__image') AND isset( $image['url'] ) ) {
-			$image = $image['url'];
+		if ( has_post_thumbnail() ) {
+			$image = featured__image( $post, array(
+				'get_src' => true
+				,'post_thumbnail_size' => 'large-thumbnail'
+			) );
 		} else if ( get_field('_books__image_url') ) {
 			$image = get_field('_books__image_url');
 		}

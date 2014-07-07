@@ -38,7 +38,9 @@ echo "<div class=\"row-fluid\">";
 	echo "</div>";
 	
 	echo "<div class=\"span4\">";
-		echo "Side Bar Here...";
+		get_template_part( 'loop-event-dates' );
+		get_template_part( 'loop-sponsors' ); 
+		get_template_part( 'loop-books' );
 	echo "</div>";
 	
 echo "</div>";
