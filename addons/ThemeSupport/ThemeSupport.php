@@ -129,7 +129,7 @@ class ThemeSupport {
 		
 		add_action( 'admin_enqueue_scripts', array( &$this, 'admin_enqueue_scripts' ) );
 		add_action('wp_dashboard_setup', array( &$this, 'remove_dashboard_widget' ), 11 );
-		add_action( 'wp_dashboard_setup', array( &$this, 'add_dashboard_widgets' ) );
+		// add_action( 'wp_dashboard_setup', array( &$this, 'add_dashboard_widgets' ) );
 		
 	} // end function admin_init
 	
