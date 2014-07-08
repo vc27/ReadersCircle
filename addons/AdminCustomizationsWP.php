@@ -123,6 +123,12 @@ class AdminCustomizationsWP {
 	 * @updated 00.00.00
 	 **/
 	function admin_init() {
+		global $pagenow;
+		
+		if ( current_user_can( 'book-club-author' ) AND $pagenow == 'index.php' ) {
+			wp_redirect( home_url() . "/wp-admin/profile.php" );
+			exit;
+		}
 		
 		add_action( 'admin_footer_text', array( &$this, 'admin_footer_text' ) );
 		add_filter( 'update_footer', '__return_false', 9999 );
@@ -232,6 +238,7 @@ class AdminCustomizationsWP {
 		
 		if ( current_user_can( 'book-club-author' ) ) {
 			remove_menu_page( 'edit.php?post_type=tribe_events' );
+			remove_menu_page( 'index.php' );
 		}
         
     } // end function remove_mene_page

@@ -117,6 +117,8 @@ class PMProWP {
 		add_action( 'wp', array( &$this, 'template_redirect' ) );
 		add_filter( 'body_class', array( &$this, 'body_class' ) );
 		add_filter( 'admin_body_class', array( &$this, 'body_class' ) );
+		add_filter( 'retrieve_password_title', array( &$this, 'retrieve_password_title' ) );
+		add_filter( 'retrieve_password_message', array( &$this, 'retrieve_password_message' ) );
 		
 	} // end function init
 	
@@ -257,6 +259,44 @@ class PMProWP {
 		return $classes;
 		
 	} // end function body_class
+	
+	
+	
+	
+	
+	
+	/**
+	 * retrieve_password_title
+	 *
+	 * @version 1.0
+	 * @updated 00.00.00
+	 **/
+	function retrieve_password_title( $title ) {
+		
+		
+		
+		return $title;
+		
+	} // end function retrieve_password_title 
+	
+	
+	
+	
+	
+	
+	/**
+	 * retrieve_password_message
+	 *
+	 * @version 1.0
+	 * @updated 00.00.00
+	 **/
+	function retrieve_password_message( $message ) {
+		
+		
+		
+		return $message;
+		
+	} // end function retrieve_password_message
 	
 	
 	

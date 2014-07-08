@@ -167,7 +167,7 @@
 	<tbody>                
 		<tr>
 			<td>
-				<div>
+				<div id="username-wrap">
 					<label for="username"><?php _e('Username', 'pmpro');?></label>
 					<input id="username" name="username" type="text" class="input <?php echo pmpro_getClassForField("username");?>" size="30" value="<?php echo esc_attr($username)?>" /> 
 				</div>

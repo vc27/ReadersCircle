@@ -837,6 +837,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/tpl-import\/tpl-convert-book-club-post-content.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/tpl-import\/tpl-convert-book-club-post-content.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/tpl-import\/tpl-create-users-csv.php": {
 		"fileType": 8192,
 		"ignore": 0,

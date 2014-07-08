@@ -31,8 +31,28 @@ var childTheme = {
 		
 		this.mbpScaleFix();
 		childTheme.submitSearch();
+		childTheme.pmproCheckout();
 		
 	} // end init : function
+	
+	
+	
+	/**
+	 * pmproCheckout
+	 **/
+	,pmproCheckout : function() {
+		
+		if ( jQuery('body').hasClass('pmpro-checkout') ) {
+			var usernameBlock = jQuery('#username-wrap');
+			var emailField = jQuery('#bemail');
+			var usernameField = jQuery('input',usernameBlock);
+			usernameBlock.hide();
+			emailField.keyup(function() {
+				usernameField.val(emailField.val());
+			});
+		}
+		
+	} // end pmproCheckout : function
 	
 	
 	
