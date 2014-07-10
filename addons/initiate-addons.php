@@ -32,6 +32,7 @@ if ( ! defined('THEME_ADDONS_INIT') ) {
 	require_once( "TribeEventsCalendarWP.php" );
 	require_once( "WPSEOEdits.php" );
 	require_once( "PMProWP.php" );
+	require_once( "GeoMetaDataWP.php" );
 	
 	define( 'THEME_ADDONS_INIT', true );
 	

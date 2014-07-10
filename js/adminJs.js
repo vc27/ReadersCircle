@@ -27,6 +27,10 @@ jQuery(document).ready(function($) {
 		if ( emailField.val() == '' ) {
 			emailField.val(customAdminObj.user_email);
 		}
+		
+		var seoMeta = jQuery('#wpseo_meta');
+		jQuery('h3 span',seoMeta).html('Book Club SEO');
+		jQuery('#linkdex, .linkdex').hide();
 	}
 	
 });

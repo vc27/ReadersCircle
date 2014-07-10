@@ -1,5 +1,5 @@
 <?php
-/* Template Name: Import Resources */
+/* Template Name: 05 Import Resources */
 
 /**
  * File Name tpl-import-resources.php
@@ -11,7 +11,7 @@
  **/
 ####################################################################################################
 
-die('class ImportResourcesVCWP is de-activated');
+die('ImportResourcesVCWP deactivated');
 
 
 

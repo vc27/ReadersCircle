@@ -219,8 +219,8 @@ class BookClubsPostType {
 				'labels' => array(
 					'name' => __( 'Book Clubs', 'childtheme' ),
 					'singular_name' => __( 'Book Clubs', 'childtheme' ),
-					'add_new' => __( 'Add New', 'childtheme' ),
-					'add_new_item' => __( 'Add New', 'childtheme' ),
+					'add_new' => __( 'New Book Club', 'childtheme' ),
+					'add_new_item' => __( 'New Book Club', 'childtheme' ),
 					'edit_item' => __( 'Edit Book Clubs', 'childtheme' ),
 					'new_item' => __( 'New Book Clubs', 'childtheme' ),
 					'view_item' => __( 'View Book Clubs', 'childtheme' ),
@@ -277,17 +277,6 @@ class BookClubsPostType {
 				'_edit_link' => 'post.php?post=%d',
 
 			), // end 'post_type'
-
-
-			// add_image_size( $name, $width, $height, $crop )
-			'featured_image_sizes' => array(
-				array(
-					'name' => '{Featured Image} EX Small',
-					'width' => '75',
-					'height' => '75',
-					'crop' => false,
-				),
-			),
 
 		) );
 		

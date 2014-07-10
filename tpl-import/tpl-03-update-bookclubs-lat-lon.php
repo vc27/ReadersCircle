@@ -1,5 +1,5 @@
 <?php
-/* Template Name: Update Book Club Lat Lon */
+/* Template Name: 03 Update Book Club Lat Lon */
 
 /**
  * File Name UpdateBookClubLatLon.php
@@ -10,9 +10,13 @@
  **/
 ####################################################################################################
 
-die('UpdateBookClubLatLon deactivated')
+die('UpdateBookClubLatLon deactivated');
 
-
+/**
+- Google geo location service will only process about 100 items per connection.
+- This class will update existing book clubs that are missing lat lon.
+- This class may need to be ran multiple times before all the book clubs are processed.
+**/
 
 
 /**

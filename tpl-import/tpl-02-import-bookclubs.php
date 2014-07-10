@@ -1,5 +1,5 @@
 <?php
-/* Template Name: Import Book Club */
+/* Template Name: 02 Import Book Club */
 
 /**
  * File Name tpl-import-bookclubs.php
@@ -11,7 +11,7 @@
 ####################################################################################################
 
 
-
+die('ImportBookClubsWP deactivated');
 
 
 /**
@@ -425,7 +425,13 @@ class ImportBookClubsWP {
 		global $wpdb;
 		
 		$_book_club__circle_id = get_post_meta( $post->ID, '_book_club__circle_id', true );
+		if ( ! $_book_club__circle_id ) {
+			return;
+		}
 		$results = $wpdb->get_results("SELECT * FROM `circles` WHERE `circleid` = $_book_club__circle_id");
+		if ( ! isset( $results[0] ) ) {
+			return;
+		}
 		$_book_club__object = $results[0];
 		
 		$results = Geolocation::getCoordinates( '', '', '', $_book_club__object->zip, $_book_club__object->country );
@@ -472,17 +478,16 @@ class ImportBookClubsWP {
 	 **/
 	function wp_update_post( $post_id ) {
 		
-		$_book_club__object = get_post_meta( $post_id, '_book_club__object', true );
+		$_book_club__rc_id = get_post_meta( $post_id, '_book_club__rc_id', true );
 		
 		$user_query = new WP_User_Query( array( 
 			'meta_key' => 'rc_id', 
-			'meta_value' => $_book_club__object->userid 
+			'meta_value' => $_book_club__rc_id
 		) );
 		
 		$post = array(
 			'ID' => $post_id,
 			'post_type' => 'book-club',
-			'post_author' => $user_query->results[0]->data->ID,
 		);
 		
 		if ( isset( $user_query->results[0]->data->ID ) AND is_numeric( $user_query->results[0]->data->ID ) ) {

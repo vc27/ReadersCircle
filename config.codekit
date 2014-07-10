@@ -324,6 +324,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/images\/login-logo.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 11575,
+		"inputAbbreviatedPath": "\/images\/login-logo.png",
+		"outputAbbreviatedPath": "\/images\/login-logo.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/images\/logo-text-full.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -837,65 +848,47 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/tpl-import\/tpl-convert-book-club-post-content.php": {
+	"\/tpl-import\/tpl-01-create-users-csv.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/tpl-import\/tpl-convert-book-club-post-content.php",
+		"inputAbbreviatedPath": "\/tpl-import\/tpl-01-create-users-csv.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/tpl-import\/tpl-create-users-csv.php": {
+	"\/tpl-import\/tpl-02-import-bookclubs.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/tpl-import\/tpl-create-users-csv.php",
+		"inputAbbreviatedPath": "\/tpl-import\/tpl-02-import-bookclubs.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/tpl-import\/tpl-import-bookclubs.php": {
+	"\/tpl-import\/tpl-03-update-bookclubs-lat-lon.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/tpl-import\/tpl-import-bookclubs.php",
+		"inputAbbreviatedPath": "\/tpl-import\/tpl-03-update-bookclubs-lat-lon.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/tpl-import\/tpl-import-books.php": {
+	"\/tpl-import\/tpl-04-import-books.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/tpl-import\/tpl-import-books.php",
+		"inputAbbreviatedPath": "\/tpl-import\/tpl-04-import-books.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/tpl-import\/tpl-import-resources.php": {
+	"\/tpl-import\/tpl-05-import-resources.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/tpl-import\/tpl-import-resources.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/tpl-import\/tpl-update-book-club-lat-lon.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/tpl-import\/tpl-update-book-club-lat-lon.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/tpl-import\/tpl-update-user-name.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/tpl-import\/tpl-update-user-name.php",
+		"inputAbbreviatedPath": "\/tpl-import\/tpl-05-import-resources.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0

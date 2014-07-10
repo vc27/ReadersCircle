@@ -1,5 +1,5 @@
 <?php
-/* Template Name: Import Books */
+/* Template Name: 04 Import Books */
 
 /**
  * File Name tpl-import-books.php
@@ -11,7 +11,7 @@
 ####################################################################################################
 
 
-die('class ImportBooks is de-activated');
+// die('ImportBooks deactivated');
 
 
 /**

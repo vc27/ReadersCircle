@@ -1,11 +1,8 @@
 <?php
-/* Template Name: Update User Names */
 /**
- * File Name UpdateUserNameToEmail.php
+ * @package WordPress
  * @subpackage ProjectName
  * @license GPL v2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
- * @version 1.0
- * @updated 00.00.00
  **/
 ####################################################################################################
 
@@ -14,13 +11,13 @@
 
 
 /**
- * UpdateUserNameToEmail
+ * GeoMetaDataWP
  *
  * @version 1.0
  * @updated 00.00.00
  **/
-$UpdateUserNameToEmail = new UpdateUserNameToEmail();
-class UpdateUserNameToEmail {
+$GeoMetaDataWP = new GeoMetaDataWP();
+class GeoMetaDataWP {
 	
 	
 	
@@ -66,31 +63,30 @@ class UpdateUserNameToEmail {
 	 * @updated 00.00.00
 	 **/
 	function __construct() {
-		global $wpdb;
 		
-		$users = $wpdb->get_results("SELECT * FROM wp_users WHERE user_login != 'randy'");
-		
-		foreach ( $users as $user ) {
-			$wpdb->replace( 'wp_users', array(
-				'ID' => $user->ID
-				,'user_login' => $user->user_email
-				,'user_pass' => $user->user_pass
-				,'user_nicename' => sanitize_title_with_dashes( $user->user_email )
-				,'user_email' => $user->user_email
-				,'user_url' => $user->user_url
-				,'user_registered' => $user->user_registered
-				,'user_activation_key' => $user->user_activation_key
-				,'user_status' => $user->user_status
-				,'display_name' => $user->display_name
-			) );
+		if ( ! is_admin() ) {
+			
+			add_action( 'init', array( &$this, 'init' ) );
 		}
-		
-		// $users = $wpdb->get_results("SELECT * FROM wp_users WHERE user_login != 'randy' LIMIT 2");
-		// print_r($users); die();
-		
-		die('done');
 
 	} // end function __construct
+	
+	
+	
+	
+	
+	
+	/**
+	 * init
+	 *
+	 * @version 1.0
+	 * @updated 00.00.00
+	 **/
+	function init() {
+		
+		add_action( 'wp_head', array( &$this, 'wp_head' ), 1 );
+		
+	} // end function init
 	
 	
 	
@@ -133,6 +129,27 @@ class UpdateUserNameToEmail {
 	
 	
 	
+	/**
+	 * get
+	 *
+	 * @version 1.0
+	 * @updated 00.00.00
+	 **/
+	function get( $key ) {
+		
+		if ( isset( $key ) AND ! empty( $key ) AND isset( $this->$key ) AND ! empty( $this->$key ) ) {
+			return $this->$key;
+		} else {
+			return false;
+		}
+		
+	} // end function get
+	
+	
+	
+	
+	
+	
 	####################################################################################################
 	/**
 	 * Functionality
@@ -145,16 +162,33 @@ class UpdateUserNameToEmail {
 	
 	
 	/**
-	 * example_function
+	 * wp_head
 	 *
 	 * @version 1.0
 	 * @updated 00.00.00
 	 **/
-	function example_function() {
+	function wp_head() {
 		
-		// sss
+		if ( is_single() AND get_post_type() == 'book-club' ) {
+			global $post;
+			?>
+			
+			<!-- Geo Meta -->
+			<meta name="geo.position" content="<?php echo $post->location->lat; ?>;<?php echo $post->location->long; ?>" />
+			<meta name="geo.placename" content="<?php echo $post->location->city; ?>, <?php echo $post->location->state_long; ?>, <?php echo $post->location->state; ?>, <?php echo $post->location->country; ?>" />
+			<meta name="geo.region" content="<?php echo $post->location->country; ?>-<?php echo $post->location->state; ?>" />
+
+			<meta property="og:locality" content="<?php echo $post->location->city; ?>" />
+			<meta property="og:country-name" content="<?php echo $post->location->country; ?>" />
+			<meta property="og:region" content="<?php echo $post->location->state; ?>" />
+			<meta property="og:postal-code" content="<?php echo $post->location->zipcode; ?>" />
+			<meta property="og:latitude" content="<?php echo $post->location->lat; ?>" />
+			<meta property="og:longitude" content="<?php echo $post->location->long; ?>" />
+
+<?php
+		}
 		
-	} // end function example_function
+	} // end function wp_head
 	
 	
 	
@@ -192,4 +226,4 @@ class UpdateUserNameToEmail {
 	
 	
 	
-} // end class UpdateUserNameToEmail
+} // end class GeoMetaDataWP

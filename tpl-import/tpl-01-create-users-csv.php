@@ -1,5 +1,5 @@
 <?php
-/* Template Name: Create Import Users CSV */
+/* Template Name: 01 Create Import Users CSV */
 
 /**
  * File Name CreatetUsersCSV.php
@@ -11,7 +11,7 @@
 ####################################################################################################
 
 
-
+die('CreatetUsersCSV deactivated');
 
 
 /**
