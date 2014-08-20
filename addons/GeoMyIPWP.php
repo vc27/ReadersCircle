@@ -58,6 +58,7 @@ class GeoMyIPWP {
 	function __construct() {
 		
 		add_action( 'init', array( &$this, 'init' ) );
+		add_filter( 'gmw_modify_get_args', array( $this, 'gmw_modify_get_args' ) );
 
 	} // end function __construct
 	
@@ -196,7 +197,7 @@ class GeoMyIPWP {
 		if ( $countries ) {
 			$output = "";
 
-			$output .= "<select id=\"country\" required>";
+			$output .= "<select name=\"country\" id=\"country\" required>";
 				// $output .= "<option value=\"\">Select a country</option>";
 				foreach ( $countries as $country ) {
 					$output .= "<option value=\"$country\">$country</option>";
@@ -236,6 +237,25 @@ class GeoMyIPWP {
 	    echo "</div>";
 
 	} // end function gmw_form_submit_fields 
+	
+	
+	
+	
+	
+	
+	/**
+	 * gmw_modify_get_args
+	 *
+	 * @version 1.0
+	 * @updated 00.00.00
+	 **/
+	function gmw_modify_get_args( $get ) {
+		
+		$get['gmw_address'][0] = $get['gmw_address'][0] . ", " . $get['country'];
+		
+		return $get;
+		
+	} // end function gmw_modify_get_args
 	
 	
 	

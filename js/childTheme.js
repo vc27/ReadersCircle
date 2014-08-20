@@ -28,12 +28,25 @@ var childTheme = {
 	,init : function() {
 		
 		// this.setParams();
-		
+		this.defaultSearch();
 		this.mbpScaleFix();
-		childTheme.submitSearch();
+		// childTheme.submitSearch();
 		childTheme.pmproCheckout();
 		
 	} // end init : function
+	
+	
+	
+	/**
+	 * defaultSearch
+	 **/
+	,defaultSearch : function() {
+		
+		var select = jQuery('.gmw-distance-select');
+		jQuery(select.children()[0]).remove();
+		select.val(25);
+		
+	} // end defaultSearch : function
 	
 	
 	
